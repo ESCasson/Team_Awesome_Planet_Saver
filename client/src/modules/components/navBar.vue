@@ -1,7 +1,9 @@
 <template lang="html">
 <div>
-<button>Back</button>
-<button>Next</button>
+<div id="btns">
+	<button>Back</button>
+	<button>Next</button>
+</div>
 </div>
 </template>
 
@@ -12,4 +14,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#btns {
+display: flex;
+justify-content: space-between;
+}
+
+#btns button:last-child {
+	margin-left: auto;
+}
 </style>
