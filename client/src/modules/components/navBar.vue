@@ -2,7 +2,7 @@
 <div>
 <div id="btns">
 	<button v-on:click="getPreviousPage()"><a :href="this.previousPage">Back</a></button>
-	<button><a :href="this.nextPage">Next</a></button>
+	<button v-on:click="getNextPage()"><a :href="this.nextPage">Next</a></button>
 </div>
 </div>
 </template>
@@ -26,6 +26,13 @@ export default {
       } else {
         this.previousPage = `http://localhost:8080/module/${arrayURL[4]}/${previousPage}`
       }
+    },
+
+    getNextPage () {
+      const getURL = document.URL
+      const arrayURL = getURL.split('/')
+      const nextPage = parseInt(arrayURL[5]) + 1
+      this.nextPage = `http://localhost:8080/module/${arrayURL[4]}/${nextPage}`
     }
   }
 }
