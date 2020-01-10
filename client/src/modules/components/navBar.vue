@@ -1,15 +1,33 @@
 <template lang="html">
 <div>
 <div id="btns">
-	<button>Back</button>
-	<button>Next</button>
+	<button v-on:click="getPreviousPage()"><a :href="this.previousPage">Back</a></button>
+	<button><a :href="this.nextPage">Next</a></button>
 </div>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'nav-buttons'
+  name: 'nav-buttons',
+  data () {
+    return {
+      nextPage: null,
+      previousPage: null
+    }
+  },
+  methods: {
+    getPreviousPage () {
+      const getURL = document.URL
+      const arrayURL = getURL.split('/')
+      const previousPage = parseInt(arrayURL[5]) - 1
+      if (previousPage === 0) {
+        this.previousPage = 'http://localhost:8080/module/'
+      } else {
+        this.previousPage = `http://localhost:8080/module/${arrayURL[4]}/${previousPage}`
+      }
+    }
+  }
 }
 </script>
 
