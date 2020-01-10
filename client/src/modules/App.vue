@@ -11,15 +11,18 @@
 </ul>
 </div>
   <learning-content />
+	<nav-buttons />
   </div>
 </template>
 
 <script>
 import LearningContent from '@/modules/components/learningContent.vue'
+import NavBar from '@/modules/components/navBar.vue'
 export default {
   name: 'app',
   components: {
-    'learning-content': LearningContent
+    'learning-content': LearningContent,
+    'nav-buttons': NavBar
   }
 }
 </script>
