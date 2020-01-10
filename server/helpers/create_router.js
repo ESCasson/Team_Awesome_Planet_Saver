@@ -15,6 +15,22 @@ const createRouter = function (collection) {
 		});
 	});
 
+	router.get('/:module/:page', (req, res) => {
+		const moduleName = req.params.module;
+		const pageNumber = parseInt(req.params.page);
+
+		collection.findOne({
+			moduleName: moduleName,
+			pageNumber: pageNumber
+		})
+		.then(result => res.json(result))
+		.catch(err => {
+			console.error(err);
+			res.status(500);
+			res.json({ status: 500, error: err });
+		});
+	});
+
   return router;
 };
 

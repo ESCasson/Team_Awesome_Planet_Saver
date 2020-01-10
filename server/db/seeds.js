@@ -3,56 +3,56 @@ db.dropDatabase();
 
 db.modules.insertMany([
 	{
-		moduleName:'Reduce Greenhouse Gasses',
+		moduleName:'Reduce_Greenhouse_Gasses',
 		modulePassMark: 50
 	},
 	{
-		moduleName:'Biggest Producer of Greenhouse Gasses',
+		moduleName:'Biggest_Producer_of_Greenhouse_Gasses',
 		modulePassMark: 50
 	}
 ]);
 
 db.learningContent.insertMany([
 	{
-		moduleID:'5e18c6075be47028d768b9f9',
-		pageNumber: 0,
-		data:'',
-		contentName: ''
+		moduleName:'Reduce_Greenhouse_Gasses',
+		pageNumber: 1,
+		data:'hi',
+		contentName: 'hello world'
 	},
 	{
-		moduleID:'5e18c6075be47028d768b9f9',
-		pageNumber: 0,
-		data:'',
-		contentName: ''
+		moduleName:'Reduce_Greenhouse_Gasses',
+		pageNumber: 2,
+		data:'goodbye',
+		contentName: 'goodbye world'
 	},
 	{
-		moduleID:'5e18c6075be47028d768b9f9',
-		pageNumber: 0,
-		data:'',
-		contentName: ''
+		moduleName:'Reduce_Greenhouse_Gasses',
+		pageNumber: 3,
+		data:'hello again',
+		contentName: 'uwu'
 	}
 ]);
 
 db.quizQuestions.insertMany([
 	{
-		moduleID: '5e18c6075be47028d768b9f9',
-		questionNumber: 0,
-		questionData: '',
-		questionAnswer: '',
-		possibleAnswers: []
+		moduleName: 'Reduce_Greenhouse_Gasses',
+		questionNumber: 1,
+		questionData: 'what is my name',
+		questionAnswer: 'charlie',
+		possibleAnswers: ['charlie', 'greg', 'adrian']
 	},
 	{
-		moduleID: '5e18c6075be47028d768b9f9',
-		questionNumber: 0,
-		questionData: '',
-		questionAnswer: '',
-		possibleAnswers: []
+		moduleName: 'Reduce_Greenhouse_Gasses',
+		questionNumber: 2,
+		questionData: 'who is the best',
+		questionAnswer: 'me',
+		possibleAnswers: ['me', 'you', 'no one']
 	},
 	{
-		moduleID: '5e18c6075be47028d768b9f9',
-		questionNumber: 0,
-		questionData: '',
-		questionAnswer: '',
-		possibleAnswers: []
+		moduleName: 'Reduce_Greenhouse_Gasses',
+		questionNumber: 3,
+		questionData: 'what is the meaning of life',
+		questionAnswer: '42',
+		possibleAnswers: ['42', 'death', 'happiness', '45']
 	}
 ]);
