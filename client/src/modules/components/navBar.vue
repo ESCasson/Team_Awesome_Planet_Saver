@@ -1,8 +1,8 @@
 <template lang="html">
 <div>
 <div id="btns">
-	<button v-on:click="getPreviousPage()"><a :href="this.previousPage">Back</a></button>
-	<button v-on:click="getNextPage()"><a :href="this.nextPage">Next</a></button>
+<button v-on:click="getPreviousPage()"><a :href="this.previousPage">Back</a></button>
+<button v-on:click="getNextPage()"><a :href="this.nextPage">Next</a></button>
 </div>
 </div>
 </template>
@@ -46,6 +46,6 @@ justify-content: space-between;
 }
 
 #btns button:last-child {
-	margin-left: auto;
+margin-left: auto;
 }
 </style>

@@ -31,6 +31,20 @@ const createRouter = function (collection) {
 		});
 	});
 
+	router.get('/:module', (req, res) => {
+		const moduleName = req.params.module;
+
+		collection.find({
+			moduleName: moduleName
+		}).toArray()
+		.then(result => res.json(result))
+		.catch(err => {
+			console.error(err);
+			res.status(500);
+			res.json({ status: 500, error: err });
+		});
+	});
+
   return router;
 };
 
