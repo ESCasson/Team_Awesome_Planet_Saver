@@ -1,13 +1,20 @@
 <template lang="html">
-  <p>Quiz for module: {{quiz_required.module_id}}</p>
+  <div>
+    <p>Quiz for module: {{quiz_required.module_id}}</p>
+    <quiz-questions></quiz-questions>
+  </div>
 </template>
 
 <script>
 import QuizsService from '../../helpers/QuizsService.js';
+import QuizQuestions from './QuizQuestions.vue';
 
 export default {
   name: 'quiz',
   props: ['module_id'],
+  components: {
+    'quiz-questions': QuizQuestions
+  },
   data () {
     return {
       quizs: [],
