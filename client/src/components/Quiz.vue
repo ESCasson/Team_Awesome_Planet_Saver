@@ -1,24 +1,27 @@
 <template lang="html">
   <div>
-    <p>Quiz for module: {{quiz_required.module_id}}</p>
-    <quiz-questions></quiz-questions>
+    <p>Quiz for module: {{module_id}}</p>
+    <quiz-question v-for="(fullQuestion, index) in this.quiz_required.questions"
+    :fullQuestion="fullQuestion" :key="index"/>
   </div>
 </template>
 
 <script>
 import QuizsService from '../../helpers/QuizsService.js';
-import QuizQuestions from './QuizQuestions.vue';
+import QuizQuestion from './QuizQuestion.vue';
 
 export default {
   name: 'quiz',
   props: ['module_id'],
   components: {
-    'quiz-questions': QuizQuestions
+    'quiz-question': QuizQuestion
   },
   data () {
     return {
       quizs: [],
-      quiz_required: null,
+      quiz_required: {
+        questions: "inital"
+      }
     }
   },
 
@@ -26,7 +29,7 @@ export default {
     fetchData(){
       QuizsService.getQuizs()
       .then(quizs => this.quizs = quizs)
-      .then(quizs => this.requiredQuiz())
+      .then(() => this.requiredQuiz())
     },
 
     requiredQuiz(){

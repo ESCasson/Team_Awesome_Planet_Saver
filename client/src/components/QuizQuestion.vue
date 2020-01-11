@@ -1,12 +1,13 @@
 <template lang="html">
-  <p>Questions</p>
+  <p>{{fullQuestion.question}}</p>
 </template>
 
 <script>
 export default {
-  name: 'quiz-questions',
-  data(){
-  }
+  name: 'quiz-question',
+  props: [
+    'fullQuestion'
+  ]
 }
 </script>
 
