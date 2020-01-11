@@ -1,17 +1,17 @@
 <template lang="html">
 <div id="onebar">
-	<ul>
-		<div v-for="page in pages">
-		<li>
-			<div v-if="page.pageNumber < currentPage">
-			<div class="completed"></div>
-		</div>
-		<div v-else>
-			<div class="empty"></div>
-		</div>
-	</li>
-		</div>
-	</ul>
+<ul>
+<div v-for="page in pages">
+<li>
+<div v-if="page.pageNumber < currentPage">
+<div class="completed"></div>
+</div>
+<div v-else>
+<div class="empty"></div>
+</div>
+</li>
+</div>
+</ul>
 </div>
 </template>
 
