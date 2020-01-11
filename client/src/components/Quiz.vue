@@ -1,13 +1,10 @@
 <template lang="html">
-  <h3>The is the header</h3>
+<h1>Quiz</h1>
 </template>
 
 <script>
 export default {
-  name: 'test',
-  data(){
-
-  }
+  name: 'quiz',
 }
 </script>
 

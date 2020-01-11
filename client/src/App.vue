@@ -1,20 +1,22 @@
 <template>
   <div id="app">
-    <test></test>
+    <quiz :module_id = 'module_id'></quiz>
   </div>
 
 </template>
 
 <script>
-import Test from "./components/Test.vue";
+import Quiz from "./components/Quiz.vue";
 
 export default {
   name: 'app',
-  data(){
-
+  data() {
+   return {
+     module_id: 1,
+   }
   },
   components: {
-    "test": Test,
+    "quiz": Quiz,
   }
 }
 </script>
