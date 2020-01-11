@@ -11,6 +11,9 @@
 </ul>
 </div>
   <learning-content />
+	<br />
+	<progress-bar />
+	<br />
 	<nav-buttons />
   </div>
 </template>
@@ -18,11 +21,13 @@
 <script>
 import LearningContent from '@/modules/components/learningContent.vue'
 import NavBar from '@/modules/components/navBar.vue'
+import ProgressBar from '@/modules/components/progressBar.vue'
 export default {
   name: 'app',
   components: {
     'learning-content': LearningContent,
-    'nav-buttons': NavBar
+    'nav-buttons': NavBar,
+    'progress-bar': ProgressBar
   }
 }
 </script>
