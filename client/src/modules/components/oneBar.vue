@@ -2,7 +2,14 @@
 <div id="onebar">
 	<ul>
 		<div v-for="page in pages">
-		<li><div class="one"></div></li>
+		<li>
+			<div v-if="page.pageNumber < currentPage">
+			<div class="completed"></div>
+		</div>
+		<div v-else>
+			<div class="empty"></div>
+		</div>
+	</li>
 		</div>
 	</ul>
 </div>
@@ -11,7 +18,23 @@
 <script>
 export default {
   name: 'one-bar',
-  props: ['pages']
+  props: ['pages'],
+  data () {
+    return {
+      currentPage: 0
+    }
+  },
+  mounted () {
+    this.getPage()
+  },
+  methods: {
+    getPage () {
+      const getCurrentPage = document.URL
+      const arrayURL = getCurrentPage.split('/')
+      const page = arrayURL[5]
+      this.currentPage = parseInt(page)
+    }
+  }
 }
 </script>
 
@@ -30,7 +53,14 @@ list-style: none;
 border: 2px solid black;
 }
 
-.one {
+.completed {
+display: flex;
+height: 30px;
+width: 200px;
+background-color: green;
+}
+
+.empty {
 display: flex;
 height: 30px;
 width: 200px;
