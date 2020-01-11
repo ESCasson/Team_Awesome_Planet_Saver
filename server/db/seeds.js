@@ -11,7 +11,7 @@ db.quizQuestions.insertMany([
         2: "2",
         3: "3"
       },
-      correct_answer: 1
+      correct_answer: "1"
     },
     {number: 2,
       question: "What is 2?",
@@ -20,7 +20,7 @@ db.quizQuestions.insertMany([
         2: "2",
         3: "3"
       },
-      correct_answer: 2
+      correct_answer: "2"
     },
       {number: 3,
       question: "What is 3?",
@@ -29,7 +29,7 @@ db.quizQuestions.insertMany([
         2: "2",
         3: "3"
       },
-      correct_answer: 3
+      correct_answer: "3"
     }
 ],
     pass_mark: 2
@@ -43,7 +43,7 @@ db.quizQuestions.insertMany([
         2: "B",
         3: "C"
       },
-      correct_answer: 1
+      correct_answer: "A"
     },
     {number: 2,
       question: "What is B?",
@@ -52,7 +52,7 @@ db.quizQuestions.insertMany([
         2: "B",
         3: "C"
       },
-      correct_answer: 2
+      correct_answer: "B"
     },
       {number: 3,
       question: "What is C?",
@@ -61,7 +61,7 @@ db.quizQuestions.insertMany([
         2: "B",
         3: "C"
       },
-      correct_answer: 3
+      correct_answer: "C"
     }
 ],
     pass_mark: 2
