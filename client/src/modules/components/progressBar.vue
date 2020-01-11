@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
 <div id="bar">
-<one-bar :totalPages="totalPages"/>
+<one-bar :pages="pages"/>
 </div>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
   name: 'progress-bar',
   data () {
     return {
-      totalPages: 0
+      pages: null
     }
   },
   components: {
@@ -28,7 +28,7 @@ export default {
       const arrayURL = getURL.split('/')
       LearningService.getTotalPages(arrayURL[4])
         .then(result => {
-          this.totalPages = result.length()
+          this.pages = result
         })
         .catch(err => console.error(err))
     }
@@ -38,6 +38,7 @@ export default {
 
 <style lang="css" scoped>
 #bar {
+display: flex;
 margin-left: 50px;
 margin-right: 50px;
 }
