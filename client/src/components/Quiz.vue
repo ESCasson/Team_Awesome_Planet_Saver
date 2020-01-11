@@ -3,7 +3,9 @@
     <p>Quiz for module: {{module_id}}</p>
     <quiz-question v-for="(fullQuestion, index) in this.quiz_required.questions"
     :fullQuestion="fullQuestion" :key="index"/>
-  </div>
+
+  <button type="button" name="button">Submit Answers</button>
+    </div>
 </template>
 
 <script>
@@ -19,9 +21,8 @@ export default {
   data () {
     return {
       quizs: [],
-      quiz_required: {
-        questions: "inital"
-      }
+      quiz_required: {}
+
     }
   },
 
