@@ -21,7 +21,8 @@ export default {
   data () {
     return {
       quizs: [],
-      quiz_required: {}
+      quiz_required: {},
+      results: []
 
     }
   },
@@ -31,12 +32,19 @@ export default {
       QuizsService.getQuizs()
       .then(quizs => this.quizs = quizs)
       .then(() => this.requiredQuiz())
+      .then((quiz) => this.createResultsSlots(quiz))
     },
 
     requiredQuiz(){
       let index = this.quizs.findIndex(quiz => quiz.module_id === this.module_id)
       return this.quiz_required = this.quizs[index]
+    },
+    createResultsSlots(quiz){
+      for (let quizQuestion of quiz.questions){
+        this.results.push(quizQuestion.number)
+      }
     }
+
   },
 
   mounted() {

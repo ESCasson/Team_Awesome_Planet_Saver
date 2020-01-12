@@ -3,6 +3,7 @@ db.dropDatabase();
 
 db.quizQuestions.insertMany([
   { module_id: 2,
+    quiz_id: 2,
     questions:[
       { number: 1,
       question: "What is 1?",
@@ -35,6 +36,7 @@ db.quizQuestions.insertMany([
     pass_mark: 2
   },
   { module_id: 1,
+    quiz_id: 1,
     questions:[
       { number: 1,
       question: "What is A?",
