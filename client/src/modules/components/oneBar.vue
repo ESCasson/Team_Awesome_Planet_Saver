@@ -3,7 +3,7 @@
 <ul>
 <div v-for="page in pages">
 <li>
-<div v-if="page.pageNumber < currentPage">
+<div v-if="donePages.includes(page.pageNumber)">
 <div class="completed"></div>
 </div>
 <div v-else>
@@ -16,16 +16,19 @@
 </template>
 
 <script>
+import EnrolledService from '@/modules/services/EnrolledService.js'
+
 export default {
   name: 'one-bar',
   props: ['pages'],
   data () {
     return {
-      currentPage: 0
+      donePages: []
     }
   },
   mounted () {
     this.getPage()
+    this.completedPages()
   },
   methods: {
     getPage () {
@@ -33,6 +36,17 @@ export default {
       const arrayURL = getCurrentPage.split('/')
       const page = arrayURL[5]
       this.currentPage = parseInt(page)
+    },
+    completedPages () {
+      const getURL = document.URL
+      const arrayURL = getURL.split('/')
+      const studID = arrayURL[5]
+      const modID = arrayURL[6]
+      EnrolledService.getCompletedPages(studID, modID)
+        .then(results => {
+          this.donePages = results.currentPage
+        })
+        .catch(err => console.error(err))
     }
   }
 }

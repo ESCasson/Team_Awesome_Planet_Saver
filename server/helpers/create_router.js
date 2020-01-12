@@ -15,12 +15,24 @@ const createRouter = function (collection) {
 		});
 	});
 
-	router.get('/:module/:page', (req, res) => {
-		const moduleName = req.params.module;
+	router.get('/:module', (req, res) => {
+		const moduleID = req.params.module
+
+		collection.find().toArray()
+		.then(docs => res.json(docs))
+		.catch(err => {
+			console.error(err);
+			res.status(500);
+			res.json({ status: 500, error: err });
+		});
+	});
+
+	router.get('/:student/:module/:page', (req, res) => {
+		const moduleID = req.params.module;
 		const pageNumber = parseInt(req.params.page);
 
 		collection.findOne({
-			moduleName: moduleName,
+			moduleID: moduleID,
 			pageNumber: pageNumber
 		})
 		.then(result => res.json(result))
@@ -31,11 +43,11 @@ const createRouter = function (collection) {
 		});
 	});
 
-	router.get('/:module', (req, res) => {
-		const moduleName = req.params.module;
+	router.get('/:student/:module', (req, res) => {
+		const moduleID = req.params.module;
 
 		collection.find({
-			moduleName: moduleName
+			moduleID: moduleID
 		}).toArray()
 		.then(result => res.json(result))
 		.catch(err => {

@@ -26,7 +26,7 @@ export default {
     getTotalPages () {
       const getURL = document.URL
       const arrayURL = getURL.split('/')
-      LearningService.getTotalPages(arrayURL[4])
+      LearningService.getTotalPages(arrayURL[5])
         .then(result => {
           this.pages = result
         })
