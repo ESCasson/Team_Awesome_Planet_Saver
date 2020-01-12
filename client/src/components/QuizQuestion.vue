@@ -2,7 +2,7 @@
   <div>
   <p>{{fullQuestion.question}}</p>
   <div v-for="(option, index) in fullQuestion.options">
-  <input type="radio" name="answers" :value="option" v-model="answer" v-on:click="handleOnClick">
+  <input type="radio" name="answers" :value="option" v-on:click="handleOnClick">
   {{option}}</br>
 </div>
 </div>
@@ -17,28 +17,18 @@ export default {
   props: [
     'fullQuestion'
   ],
-  data(){
-    return {
-      answer: '',
-      correctAns: ''
-    }
-  },
-
-computed: {
-  calcCorrectAns: function() {
-    if (this.answer === this.fullQuestion.correct_answer)
-      { return true}
-    else {
-      return false
-    }
-    }
-},
 
   methods: {
-    handleOnClick() {
-      eventBus.$emit('result', this.calcCorrectAns)
+    handleOnClick(event) {
+      let value
+      if (event.target.value === this.fullQuestion.correct_answer)
+        { value = true}
+      else {
+         value = false
     }
+    eventBus.$emit('result', value)
   }
+}
 }
 </script>
 
