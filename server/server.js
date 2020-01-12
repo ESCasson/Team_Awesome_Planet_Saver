@@ -19,9 +19,9 @@ MongoClient.connect('mongodb://localhost:27017')
 MongoClient.connect('mongodb://localhost:27017')
 .then((client) => {
   const db = client.db('planetsaver');
-  const studentCollection = db.collection('student');
+  const studentCollection = db.collection('students');
   const studentRouter = createRouter(studentCollection);
-  app.use('/api/student', studentRouter);
+  app.use('/api/students', studentRouter);
 })
 
 app.listen(3000, function () {

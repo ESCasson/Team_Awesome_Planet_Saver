@@ -24,8 +24,8 @@ const createRouter = function (collection) {
   });
 
   router.post('/', (req, res) => {
-    const new_game = req.body;
-    collection.insertOne(new_game)
+    const new_data = req.body;
+    collection.insertOne(new_data)
     .then((result) => {
       res.json(result.ops[0])
     })

@@ -70,7 +70,7 @@ db.quizQuestions.insertMany([
   }
 ]);
 
-db.student.insertMany([
+db.students.insertMany([
   {
     student_id: 1,
   },

@@ -2,7 +2,7 @@
   <div>
   <p>{{fullQuestion.question}}</p>
   <div v-for="(option, index) in fullQuestion.options">
-  <input type="radio" name="answers" :value="option" v-on:click="handleOnClick">
+  <input type="radio" :name="fullQuestion.number" :value="option" v-on:click="handleOnClick">
   {{option}}</br>
 </div>
 </div>
@@ -26,7 +26,7 @@ export default {
       else {
          value = false
     }
-    eventBus.$emit('result', value)
+    eventBus.$emit('result', this.fullQuestion.number, value)
   }
 }
 }
