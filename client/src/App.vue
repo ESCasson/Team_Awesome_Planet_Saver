@@ -1,23 +1,42 @@
-<template lang="html">
-
-<h1>Hello John</h1>
-
+<template>
+  <div class="center" id="app">
+    <modules :module_id = 'module_id'></modules>
+  </div>
 
 </template>
 
 <script>
-export default {
+import modules from "./components/modules_view.vue";
+// import modules from "./services/moduleService.js";
+// import header from "./components/header.vue"; - builds a header.vue
+// import navbar from "./components/navbar.vue";
 
+
+export default {
+  name: 'app',
+  data() {
+   return {
+     module_id: "",
+   }
+  },
+  components: {
+    "modules": modules,
+  }
 }
-</script>
+</script> -->
+
 
 <style lang="css" scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+/* .center {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
 }
+
+
+.size {
+    max-width: 350px;
+    height: auto;
+} */
+
 </style>
