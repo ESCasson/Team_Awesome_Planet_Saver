@@ -5,26 +5,35 @@
     :fullQuestion="fullQuestion" :key="index"/>
 
   <button type="button" name="button" v-on:click="handleOnClick">Submit Answers</button>
+  <quiz-results :result_object ="result_object" ></quiz-results>
     </div>
 </template>
 
 <script>
 import { eventBus } from '../main.js';
+
 import QuizsService from '../../helpers/QuizsService.js';
 import StudentsService from '../../helpers/StudentsService.js';
+
 import QuizQuestion from './QuizQuestion.vue';
+import QuizResults from './QuizResults.vue'
+
 
 export default {
   name: 'quiz',
   props: ['module_id'],
   components: {
-    'quiz-question': QuizQuestion
+    'quiz-question': QuizQuestion,
+    'quiz-results': QuizResults
   },
   data () {
     return {
       quizs: [],
       quiz_required: {},
-      results: null
+      results: null,
+      result_object: {
+        results: []
+      },
 
     }
   },
@@ -41,6 +50,7 @@ export default {
       let index = this.quizs.findIndex(quiz => quiz.module_id === this.module_id)
       return this.quiz_required = this.quizs[index]
     },
+
     createResultsSlots(quiz){
       let objTemplate = new Object();
         objTemplate.module_id = this.quiz_required.module_id;
@@ -57,8 +67,8 @@ export default {
 
     handleOnClick(){
       StudentsService.postStudentsResults(this.results)
-      .then(result => eventBus.$emit('results-added', this.results)
-      )
+      .then(result => this.result_object = result)
+      .then(() => eventBus.$emit('calcResults'))
     }
 
   },
