@@ -2,7 +2,7 @@
   <div>
   <p>{{fullQuestion.question}}</p>
   <div v-for="(option, index) in fullQuestion.options">
-  <input type="radio" name="answers" :value="option" v-model='answer' v-on:click="handleOnClick">
+  <input type="radio" name="answers" :value="option" v-model="answer" v-on:click="handleOnClick">
   {{option}}</br>
 </div>
 </div>
