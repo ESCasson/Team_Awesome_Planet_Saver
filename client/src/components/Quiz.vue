@@ -41,7 +41,10 @@ export default {
     },
     createResultsSlots(quiz){
       for (let quizQuestion of quiz.questions){
-        this.results.push(quizQuestion.number)
+        let objTemplate = new Object();
+        objTemplate.number = quizQuestion.number;
+        objTemplate.result = '';
+        this.results.push(objTemplate)
       }
     }
 
