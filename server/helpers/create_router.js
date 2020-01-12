@@ -1,30 +1,27 @@
-const express = require('express');
-const ObjectId = require('mongodb').ObjectID;
+const express = require('express')
 
 const createRouter = function (collection) {
+  const router = express.Router()
 
-  const router = express.Router();
-
-// Index ?
+  // Index ?
   router.get('/', (req, res) => {
     collection.find().toArray()
-    .then(docs => res.json(docs))
-    .catch((error) => {
-      console.error(error);
-      res.status(500);
-      res.json({status: 500, error: error})
-    })
-  });
+      .then(docs => res.json(docs))
+      .catch((error) => {
+        console.error(error)
+        res.status(500)
+        res.json({ status: 500, error: error })
+      })
+  })
 
-// Module ?
+  // Module ?
   router.get('/:id', (req, res) => {
-    const id = ObjectId(req.params.id);
-    collection.findOne({_id: id})
-    .then(doc => res.json(doc))
-  });
+    const id = req.params.id
+    collection.findOne({ module_id: id })
+      .then(doc => res.json(doc))
+  })
 
-  return router;
+  return router
+}
 
-};
-
-module.exports = createRouter;
+module.exports = createRouter
