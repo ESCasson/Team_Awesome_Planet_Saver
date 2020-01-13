@@ -12,5 +12,14 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
+
+#app {
+	background-color: green
+}
+div {
+	height: 150px;
+	background-color: green
+}
+
 </style>

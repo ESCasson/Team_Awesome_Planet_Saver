@@ -10,5 +10,16 @@ module.exports = {
 		home: 'src/home/main.js',
 		login: 'src/login/main.js',
 		register: 'src/register/main.js'
+  },
+  css: {
+    loaderOptions: {
+      css: {
+        // options here will be passed to css-loader
+      },
+      postcss: {
+        // options here will be passed to postcss-loader
+      }
+    }
   }
-}
+
+  }
