@@ -82,7 +82,10 @@ export default {
       for (let slot of this.results.results) {
         if(slot.number === id){
           slot.result = result
-    }}})
+    }}}),
+    eventBus.$on('retakeQuiz', () => {
+      this.show = true
+    })
 
   }
 }

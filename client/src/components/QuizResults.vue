@@ -3,6 +3,10 @@
     <h2>Quiz Results</h2>
     <p>Result: {{this.percentage}}%</p>
     <p>{{this.passMessage}}</p>
+    <button type="button" name="button">Return to Module Menu</button>
+    <div v-if="passed">
+    </div>
+    <button v-else="passed" v-on:click="this.retakeQuiz">Retake Quiz</button>
   </div>
 </template>
 
@@ -65,6 +69,9 @@ export default {
     calcPercentage(num_correct, num_questions){
       let result = num_correct/num_questions*100
       return this.percentage = Math.round(result)
+    },
+    retakeQuiz(){
+      eventBus.$emit('retakeQuiz')
     }
   }
 }
