@@ -16,7 +16,7 @@ export default {
 	methods: {
 		getLink (module) {
 			const id = module.moduleID;
-			this.link = `http://localhost:8080/module/CPJA181293/${id}`
+			this.link = `http://localhost:8080/content/${id}`
 		}
 	}
 }
