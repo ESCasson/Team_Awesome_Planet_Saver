@@ -113,6 +113,17 @@ db.students.insertMany([
 	}
 ]);
 
+db.userTypes.insertMany([
+	{
+		userID: 'CPJA181293',
+		userType: 'student'
+	},
+	{
+		userID: 'TEACH1234',
+		userType: 'teacher'
+	}
+]);
+
 db.enrolledModules.insertMany([
 	{
 		studentID: 'CPJA181293',

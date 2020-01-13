@@ -8,12 +8,15 @@
 </template>
 
 <script>
+import LearningService from '@/modules/services/LearningService.js'
+
 export default {
   name: 'nav-buttons',
   data () {
     return {
       nextPage: null,
-      previousPage: null
+      previousPage: null,
+			totalPage: []
     }
   },
   methods: {
@@ -32,9 +35,29 @@ export default {
       const getURL = document.URL
       const arrayURL = getURL.split('/')
       const nextPage = parseInt(arrayURL[6]) + 1
-      this.nextPage = `http://localhost:8080/module/${arrayURL[4]}/${arrayURL[5]}/${nextPage}`
-    }
-  }
+			const length = this.totalPage.length;
+
+			if (nextPage > length) {
+        this.nextPage = `http://localhost:8080/quiz/${arrayURL[5]}`
+      } else {
+        this.nextPage = `http://localhost:8080/module/${arrayURL[4]}/${arrayURL[5]}/${nextPage}`
+      }
+    },
+
+	totalPages () {
+		const getURL = document.URL
+		const arrayURL = getURL.split('/')
+		const currentModule = arrayURL[5]
+
+		LearningService.getTotalPages(currentModule)
+		.then(result => {
+			this.totalPage = result
+		})
+	}
+},
+mounted () {
+	this.totalPages()
+}
 }
 </script>
 
