@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import LearningService from '@/services/modulesService.js'
-import ModuleList from '@/components/module_list.vue'
+import LearningService from '@/home/services/modulesService.js'
+import ModuleList from '@/home/components/module_list.vue'
 export default {
   name: 'module-view',
   data () {

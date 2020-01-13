@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ModuleBtn from '@/components/module_btn.vue'
+import ModuleBtn from '@/home/components/module_btn.vue'
 export default {
   name: 'module-list',
   props: ['modules'],
