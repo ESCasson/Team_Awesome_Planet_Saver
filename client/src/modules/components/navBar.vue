@@ -22,7 +22,7 @@ export default {
       const arrayURL = getURL.split('/')
       const previousPage = parseInt(arrayURL[6]) - 1
       if (previousPage === 0) {
-        this.previousPage = 'http://localhost:8080/module/'
+        this.previousPage = `http://localhost:8080/content/${arrayURL[5]}`
       } else {
         this.previousPage = `http://localhost:8080/module/${arrayURL[4]}/${arrayURL[5]}/${previousPage}`
       }

@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import { eventBus } from '../main.js';
+import { eventBus } from '@/quiz/main.js';
 
-import QuizsService from '../../helpers/QuizsService.js';
-import StudentsService from '../../helpers/StudentsService.js';
+import QuizsService from '@/quiz/helpers/QuizsService.js';
+import StudentsService from '@/quiz/helpers/StudentsService.js';
 
-import QuizQuestion from './QuizQuestion.vue';
-import QuizResults from './QuizResults.vue'
+import QuizQuestion from '@/quiz/components/QuizQuestion.vue';
+import QuizResults from '@/quiz/components/QuizResults.vue'
 
 
 export default {
@@ -34,7 +34,7 @@ export default {
       results: null,
       result_object: '',
       show: true,
-      'module_id': 1
+      'module_id': 'BPGG123'
 
     }
   },

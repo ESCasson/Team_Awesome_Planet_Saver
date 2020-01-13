@@ -1,27 +1,45 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const MongoClient = require('mongodb').MongoClient
-const createRouter = require('./helpers/create_router.js')
-const createRouterLearning = require('./helpers/create_router_learning.js')
+const express = require ('express');
+const app = express();
+const parser = require ('body-parser');
 
-app.use(cors())
-app.use(bodyParser.json())
+const cors = require ('cors');
+
+app.use(parser.json());
+app.use(cors());
+
+const MongoClient = require ('mongodb').MongoClient;
+const createRouter = require ('./helpers/create_router.js');
+const createEnrolledRouter = require('./helpers/create_router_enrolled.js');
+const createLearningRouter = require('./helpers/create_router_learning.js');
 
 MongoClient.connect('mongodb://localhost:27017')
-  .then((client) => {
-    const db = client.db('planetsave')
-    const modulesCollection = db.collection('modules')
-    const modulesRouter = createRouter(modulesCollection)
-    app.use('/api/modules', modulesRouter)
+.then((client) => {
+  const db = client.db('planetSaver');
 
-    const learningCollection = db.collection('learningContent')
-    const learningRouter = createRouterLearning(learningCollection)
-    app.use('/api/learning', learningRouter)
-  })
-  .catch(console.err)
+  const modulesCollection = db.collection('modules');
+	const modulesRouter = createRouter(modulesCollection);
 
-app.listen(3000, function () {
-  console.log(`listening on port ${this.address().port}`)
+  const learningContentCollection = db.collection('learningContent');
+	const learningContentRouter = createLearningRouter(learningContentCollection);
+
+
+  const studentsCollection = db.collection('students');
+	const studentsRouter = createRouter(studentsCollection);
+
+  const enrolledModulesCollection = db.collection('enrolledModules');
+  const enrolledModulesRouter = createEnrolledRouter(enrolledModulesCollection);
+
+	const quizCollection = db.collection('quizQuestions');
+	const quizRouter = createRouter(quizCollection);
+
+	app.use('/api/quizQuestions', quizRouter);
+	app.use('/api/modules', modulesRouter);
+	app.use('/api/learningContent', learningContentRouter);
+	app.use('/api/students', studentsRouter);
+	app.use('/api/enrolledModules', enrolledModulesRouter);
+})
+.catch(err => console.error(err.message));
+
+app.listen(3000, function(){
+  console.log(`Listening on port ${this.address().port}`);
 })

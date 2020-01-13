@@ -1,19 +1,18 @@
 <template lang="html">
 	<div>
 		<div v-for="(module, index) in modules" :key='index' :module='module'>
-			<p>{{ module.name }}: <button>Select Me</button></p>
+			<module-btn :module="module" />
 		</div>
 	</div>
 </template>
 
 <script>
+import ModuleBtn from '@/components/module_btn.vue'
 export default {
   name: 'module-list',
   props: ['modules'],
-  data () {
-    return {
-      module: null
-    }
+	components: {
+    'module-btn': ModuleBtn
   }
 }
 </script>
