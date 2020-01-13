@@ -1,7 +1,7 @@
 <template lang="html">
 	<div>
 		<div v-for="(module, index) in modules" :key='index' :module='module'>
-			<p>{{ module.contentName }}: <button>Select Me</button></p>
+			<p>{{ module.name }}: <button>Select Me</button></p>
 		</div>
 	</div>
 </template>

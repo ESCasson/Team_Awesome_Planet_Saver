@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import LearningService from '@/services/learningService.js'
+import LearningService from '@/services/modulesService.js'
 import ModuleList from '@/components/module_list.vue'
 export default {
   name: 'module-view',
@@ -21,9 +21,7 @@ export default {
   },
   methods: {
     getData () {
-      const getURL = document.URL.split('/')
-
-      LearningService.getModuleList(getURL[3])
+      LearningService.getModules()
         .then(result => {
           this.moduleData = result
         })
