@@ -1,13 +1,13 @@
 <template lang="html">
   <div>
 		<h3>Login</h3>
-			<label for="username">Username:</label>
-			<input type="text" id="username" v-model="username">
-			<br />
-			<label for="password">Password:</label>
-			<input type="password" id="password" v-model="password">
-			<br />
-			<button v-on:click="checkData()"><a :href="this.passed">Login</a></button>
+				<label for="username">Username:</label>
+				<input type="text" id="username" v-model="username">
+				<br />
+				<label for="password">Password:</label>
+				<input type="password" id="password" v-model="password">
+				<br />
+				<button v-on:click="checkData()">Login!</button>
   </div>
 </template>
 
@@ -20,8 +20,7 @@ export default {
 			username: null,
 			password: null,
 			dbusername: null,
-			dbpassword: null,
-			passed: null
+			dbpassword: null
 		}
 	},
 	methods: {
@@ -32,9 +31,16 @@ export default {
 				this.dbpassword = result.password
 			})
 			.then(() => {
-				if(this.dbusername !== null && this.dbpassword !== null) {
-					this.passed = "http://localhost:8080/home"
+				if(this.dbusername === this.username && this.dbpassword === this.password) {
+					const newURL = 'http://localhost:8080/home'
+					window.location = newURL;
 				}
+				else {
+					alert('Error! Try again');
+				}
+			})
+			.catch(err => {
+				alert('Try again!');
 			})
 		}
 	}
