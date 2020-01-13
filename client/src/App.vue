@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <quiz :module_id = 'module_id'></quiz>
+    <quiz></quiz>
   </div>
 
 </template>
@@ -10,11 +10,7 @@ import Quiz from "./components/Quiz.vue";
 
 export default {
   name: 'app',
-  data() {
-   return {
-     module_id: 1,
-   }
-  },
+
   components: {
     "quiz": Quiz,
   }

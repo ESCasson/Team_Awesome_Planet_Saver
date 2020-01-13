@@ -23,7 +23,6 @@ import QuizResults from './QuizResults.vue'
 
 export default {
   name: 'quiz',
-  props: ['module_id'],
   components: {
     'quiz-question': QuizQuestion,
     'quiz-results': QuizResults
@@ -34,7 +33,8 @@ export default {
       quiz_required: {},
       results: null,
       result_object: '',
-      show: true
+      show: true,
+      'module_id': 1
 
     }
   },
