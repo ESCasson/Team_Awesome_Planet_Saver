@@ -1,11 +1,13 @@
 <template lang="html">
   <div>
-    <p>Quiz for module: {{module_id}}</p>
-    <quiz-question v-for="(fullQuestion, index) in this.quiz_required.questions"
-    :fullQuestion="fullQuestion" :key="index"/>
+    <div v-if="this.show">
+      <p>Quiz for module: {{module_id}}</p>
+      <quiz-question v-for="(fullQuestion, index) in this.quiz_required.questions"
+      :fullQuestion="fullQuestion" :key="index"/>
+    <button type="button" name="button" v-on:click="handleOnClick">Submit Answers</button>
+    </div>
 
-  <button type="button" name="button" v-on:click="handleOnClick">Submit Answers</button>
-  <quiz-results :result_object ="result_object" ></quiz-results>
+  <quiz-results v-else="this.show" :result_object ="result_object" ></quiz-results>
     </div>
 </template>
 
@@ -31,9 +33,8 @@ export default {
       quizs: [],
       quiz_required: {},
       results: null,
-      result_object: {
-        results: []
-      },
+      result_object: '',
+      show: true
 
     }
   },
@@ -68,7 +69,8 @@ export default {
     handleOnClick(){
       StudentsService.postStudentsResults(this.results)
       .then(result => this.result_object = result)
-      .then(() => eventBus.$emit('calcResults'))
+      .then(() => eventBus.$emit('calcResults'),
+    this.show = false)
     }
 
   },

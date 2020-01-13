@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div>
     <h2>Quiz Results</h2>
     <p>Result: {{this.percentage}}%</p>
     <p>{{this.passMessage}}</p>
@@ -15,12 +15,13 @@ export default {
   data(){
     return {
       'passed': null,
-      'percentage': ''
+      'percentage': '',
+      'show': false
     }
   },
   mounted(){
     eventBus.$on('calcResults', () => {
-      this.calcData()
+      this.calcData(),
     })
   },
 
@@ -33,8 +34,12 @@ export default {
         return "Sorry you haven't passed this time. Please try again"
       }
       else { return ""}
-      }
     },
+
+    calcShow: function(){
+      return "hidden"
+    }
+  },
 
   methods: {
     calcData(){
