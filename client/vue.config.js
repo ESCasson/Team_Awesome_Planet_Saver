@@ -6,6 +6,9 @@ module.exports = {
 		},
 		content: 'src/content/main.js',
     module: 'src/modules/main.js',
-		quiz: 'src/quiz/main.js'
+		quiz: 'src/quiz/main.js',
+		home: 'src/home/main.js',
+		login: 'src/login/main.js',
+		register: 'src/register/main.js'
   }
 }

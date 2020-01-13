@@ -1,52 +1,16 @@
-<template>
-  <div class="center" id="app">
-    <modules :module_id = 'module_id'></modules>
-  </div>
-
+<template lang="html">
+	<div id="app">
+		<h3>Welcome</h3>
+		<button><a href="http://localhost:8080/login">Login</a></button>
+		<button><a href="http://localhost:8080/register">Register</a></button>
+	</div>
 </template>
 
 <script>
-import modules from './components/modules_view.vue'
-// import modules from "./services/moduleService.js";
-// import header from "./components/header.vue"; - builds a header.vue
-// import navbar from "./components/navbar.vue";
-
 export default {
-  name: 'app',
-  data () {
-    return {
-      module_id: ''
-    }
-  },
-  components: {
-    modules: modules
-  },
-  methods: {
-    getCurrentModule () {
-      const getURL = document.URL
-      const arrayURL = getURL.split('/')
-      const currentModule = arrayURL[3]
-      this.module_id = currentModule
-    }
-  },
-  mounted () {
-    this.getCurrentModule()
-  }
+	name: 'app'
 }
 </script>
 
 <style lang="css" scoped>
-/* .center {
-  text-align: center;
-}
-
-/* .center {
-  text-align: center;
-
-}
-
-.size {
-    max-width: 350px;
-    height: auto;
-} */
 </style>
