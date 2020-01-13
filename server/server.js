@@ -10,6 +10,7 @@ app.use(cors());
 const MongoClient = require ('mongodb').MongoClient;
 const createRouter = require ('./helpers/create_router.js');
 const createEnrolledRouter = require('./helpers/create_router_enrolled.js');
+const createLearningRouter = require('./helpers/create_router_learning.js');
 
 MongoClient.connect('mongodb://localhost:27017')
 .then((client) => {
@@ -21,7 +22,7 @@ MongoClient.connect('mongodb://localhost:27017')
   const enrolledModulesCollection = db.collection('enrolledModules');
 
   const modulesRouter = createRouter(modulesCollection);
-  const learningContentRouter = createRouter(learningContentCollection);
+  const learningContentRouter = createLearningRouter(learningContentCollection);
   const quizQuestionsRouter = createRouter(quizQuestionsCollection);
 	const studentsRouter = createRouter(studentsCollection);
   const enrolledModulesRouter = createEnrolledRouter(enrolledModulesCollection);

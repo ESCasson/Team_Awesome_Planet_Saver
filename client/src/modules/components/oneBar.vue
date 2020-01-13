@@ -44,7 +44,7 @@ export default {
       const modID = arrayURL[5]
       EnrolledService.getCompletedPages(studID, modID)
         .then(results => {
-          this.donePages = results.currentPage
+          this.donePages = results[0].currentPage
         })
         .catch(err => console.error(err))
     }
