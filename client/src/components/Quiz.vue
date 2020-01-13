@@ -70,7 +70,7 @@ export default {
       StudentsService.postStudentsResults(this.results)
       .then(result => this.result_object = result)
       .then(() => eventBus.$emit('calcResults'),
-    this.show = false)
+       this.show = false)
     }
 
   },

@@ -21,7 +21,7 @@ export default {
   },
   mounted(){
     eventBus.$on('calcResults', () => {
-      this.calcData(),
+      this.calcData()
     })
   },
 
