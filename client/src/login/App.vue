@@ -20,7 +20,8 @@ export default {
 			username: null,
 			password: null,
 			dbusername: null,
-			dbpassword: null
+			dbpassword: null,
+			type: null
 		}
 	},
 	methods: {
@@ -29,11 +30,18 @@ export default {
 			.then(result => {
 				this.dbusername = result.username
 				this.dbpassword = result.password
+				this.type = result.type
 			})
 			.then(() => {
 				if(this.dbusername === this.username && this.dbpassword === this.password) {
-					const newURL = 'http://localhost:8080/home'
-					window.location = newURL;
+					if(this.type === 'student') {
+						const newURL = 'http://localhost:8080/home'
+						window.location = newURL;
+					}
+					else {
+						const newURL = 'http://localhost:8080/teacher'
+						window.location = newURL;
+					}
 				}
 				else {
 					alert('Error! Try again');

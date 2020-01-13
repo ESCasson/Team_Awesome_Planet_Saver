@@ -9,6 +9,7 @@ module.exports = {
 		quiz: 'src/quiz/main.js',
 		home: 'src/home/main.js',
 		login: 'src/login/main.js',
-		register: 'src/register/main.js'
+		register: 'src/register/main.js',
+		teacher: 'src/teacher/main.js'
   }
 }
