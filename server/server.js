@@ -12,6 +12,7 @@ const createRouter = require ('./helpers/create_router.js');
 const createEnrolledRouter = require('./helpers/create_router_enrolled.js');
 const createLearningRouter = require('./helpers/create_router_learning.js');
 const createUserRouter = require('./helpers/create_user_router.js');
+const createLoginRouter = require('./helpers/create_login_router.js');
 
 MongoClient.connect('mongodb://localhost:27017')
 .then((client) => {
@@ -36,12 +37,16 @@ MongoClient.connect('mongodb://localhost:27017')
 	const userTypeCollection = db.collection('userTypes');
 	const userTypeRouter = createUserRouter(userTypeCollection);
 
+	const loginCollection = db.collection('loginsystem');
+	const loginRouter = createLoginRouter(loginCollection);
+
 	app.use('/api/quizQuestions', quizRouter);
 	app.use('/api/modules', modulesRouter);
 	app.use('/api/learningContent', learningContentRouter);
 	app.use('/api/students', studentsRouter);
 	app.use('/api/enrolledModules', enrolledModulesRouter);
 	app.use('/api/userType', userTypeRouter);
+	app.use('/api/login', loginRouter);
 })
 .catch(err => console.error(err.message));
 

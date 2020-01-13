@@ -132,3 +132,16 @@ db.enrolledModules.insertMany([
 		currentPage: [1, 3]
 	}
 ]);
+
+db.loginsystem.insertMany([
+	{
+		username: 'charlie',
+		password: '12345',
+		type: 'student'
+	},
+	{
+		username: 'ghosty',
+		password: '12345',
+		type: 'teacher'
+	}
+]);
