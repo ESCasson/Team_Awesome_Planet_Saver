@@ -34,14 +34,14 @@ export default {
     getPage () {
       const getCurrentPage = document.URL
       const arrayURL = getCurrentPage.split('/')
-      const page = arrayURL[5]
+      const page = arrayURL[6]
       this.currentPage = parseInt(page)
     },
     completedPages () {
       const getURL = document.URL
       const arrayURL = getURL.split('/')
-      const studID = arrayURL[5]
-      const modID = arrayURL[6]
+      const studID = arrayURL[4]
+      const modID = arrayURL[5]
       EnrolledService.getCompletedPages(studID, modID)
         .then(results => {
           this.donePages = results.currentPage

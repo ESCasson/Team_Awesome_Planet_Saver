@@ -26,7 +26,7 @@ export default {
     getAllData () {
       const currentURL = document.URL
       const arrayURL = currentURL.split('/')
-      LearningService.getAllData(arrayURL[4], arrayURL[5])
+      LearningService.getAllData(arrayURL[5], arrayURL[6])
         .then(result => {
           this.content = result.data
           this.title = result.contentName

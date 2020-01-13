@@ -20,19 +20,19 @@ export default {
     getPreviousPage () {
       const getURL = document.URL
       const arrayURL = getURL.split('/')
-      const previousPage = parseInt(arrayURL[5]) - 1
+      const previousPage = parseInt(arrayURL[6]) - 1
       if (previousPage === 0) {
         this.previousPage = 'http://localhost:8080/module/'
       } else {
-        this.previousPage = `http://localhost:8080/module/${arrayURL[4]}/${previousPage}`
+        this.previousPage = `http://localhost:8080/module/${arrayURL[4]}/${arrayURL[5]}/${previousPage}`
       }
     },
 
     getNextPage () {
       const getURL = document.URL
       const arrayURL = getURL.split('/')
-      const nextPage = parseInt(arrayURL[5]) + 1
-      this.nextPage = `http://localhost:8080/module/${arrayURL[4]}/${nextPage}`
+      const nextPage = parseInt(arrayURL[6]) + 1
+      this.nextPage = `http://localhost:8080/module/${arrayURL[4]}/${arrayURL[5]}/${nextPage}`
     }
   }
 }
