@@ -1,6 +1,6 @@
 const express = require('express')
 
-const createRouterLearning = function (collection) {
+const createRouter = function (collection) {
   const router = express.Router()
 
   // Index ?
@@ -17,17 +17,11 @@ const createRouterLearning = function (collection) {
   // Module ?
   router.get('/:id', (req, res) => {
     const id = req.params.id
-    collection.find({
-      moduleID: parseInt(id)
-    }).toArray()
-      .then(result => res.json(result))
-      .catch(err => {
-        console.error(err)
-        res.status(500)
-        res.json({ status: 500, error: err })
-      })
+    collection.findOne({ module_id: id })
+      .then(doc => res.json(doc))
   })
+
   return router
 }
 
-module.exports = createRouterLearning
+module.exports = createRouter
