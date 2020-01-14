@@ -32,8 +32,7 @@ export default {
 			})
 			.then(() => {
 				if(this.dbusername === this.username && this.dbpassword === this.password) {
-					const newURL = 'http://localhost:8080/learning_library'
-					window.location = newURL;
+					this.$router.push({path: '/learning_library'})
 				}
 				else {
 					alert('Error! Try again');

@@ -7,6 +7,7 @@
 						<li><router-link to="/">Home</router-link></li>
 						<li><router-link to="/learning_library">Modules</router-link></li>
 						<li><router-link to="/quizzes">Quizzes</router-link></li>
+						<li><router-link to="/">Logout</router-link></li>
 					</ul>
 				</div>
 	  </div>
