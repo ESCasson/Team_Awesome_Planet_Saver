@@ -11,6 +11,7 @@
 		</div>
 		<br />
 		<button v-on:click="login()">Login</button>
+		<button v-on:click="register()">Register</button>
 	</div>
 	</div>
 </div>
@@ -28,7 +29,11 @@ export default {
 	},
 	methods: {
 		login () {
-			this.$router.push({ path: '/login'})
+			this.$router.push({ path: '/login' })
+		},
+
+		register () {
+			this.$router.push({ path: '/register' })
 		},
 
 		getNasa () {

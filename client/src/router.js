@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import ModulesContent from './views/ModuleContent.vue'
 import Quizzes from './views/Quiz.vue'
 import Login from './views/Login.vue'
+import Register from './views/Register.vue'
 import Content from './views/Content.vue'
 import Index from './views/Index.vue'
 import Modules from './views/Modules.vue'
@@ -21,6 +22,11 @@ export default new Router({
 			path: '/login',
 			name: 'login',
 			component: Login
+		},
+		{
+			path: '/register',
+			name: 'register',
+			component: Register
 		},
 		{
 			path: '/learning_library',
