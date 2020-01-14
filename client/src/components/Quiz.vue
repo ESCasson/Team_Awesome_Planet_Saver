@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { eventBus } from '@/main.js';
+import { eventBus } from '../main.js';
 
 import QuizsService from '@/services/QuizQuizsService.js';
 import StudentsService from '@/services/QuizStudentsService.js';
@@ -76,7 +76,7 @@ export default {
 		getModule () {
 			const getURL = document.URL.split('/');
 			const module = getURL[4]
-			return this.module_id = module;
+			return this.module_id = 'RGG123';
 		}
 
   },
