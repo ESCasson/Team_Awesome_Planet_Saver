@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import EnrolledService from '@/modules/services/EnrolledService.js'
+import EnrolledService from '@/services/ModulesEnrolledService.js'
 
 export default {
   name: 'one-bar',

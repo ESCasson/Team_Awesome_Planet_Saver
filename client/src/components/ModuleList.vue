@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import ModuleService from '@/content/services/ModuleService.js'
-import CourseBtn from '@/content/components/courseBtn.vue'
+import ModuleService from '@/services/ModulesModuleService.js'
+import CourseBtn from './courseBtn.vue'
 
 export default {
 	name: 'module-list',

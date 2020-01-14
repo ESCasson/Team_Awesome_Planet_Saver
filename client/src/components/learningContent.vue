@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import LearningService from '@/modules/services/LearningService.js'
+import LearningService from '@/services/ModulesLearningService.js'
 export default {
   name: 'learning-content',
   data () {

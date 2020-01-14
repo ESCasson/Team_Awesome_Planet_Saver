@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import { eventBus } from '@/quiz/main.js';
+import { eventBus } from '@/main.js';
 
-import QuizsService from '@/quiz/helpers/QuizsService.js';
-import StudentsService from '@/quiz/helpers/StudentsService.js';
+import QuizsService from '@/services/QuizQuizsService.js';
+import StudentsService from '@/services/QuizStudentsService.js';
 
-import QuizQuestion from '@/quiz/components/QuizQuestion.vue';
-import QuizResults from '@/quiz/components/QuizResults.vue'
+import QuizQuestion from './QuizQuestion.vue';
+import QuizResults from './QuizResults.vue'
 
 
 export default {

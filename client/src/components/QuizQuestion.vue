@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { eventBus } from '@/quiz/main.js';
+import { eventBus } from '@/main.js';
 
 export default {
   name: 'quiz-question',

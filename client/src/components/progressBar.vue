@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import OneBar from '@/modules/components/oneBar.vue'
-import LearningService from '@/modules/services/LearningService.js'
+import OneBar from './oneBar.vue'
+import LearningService from '@/services/ModulesLearningService.js'
 export default {
   name: 'progress-bar',
   data () {

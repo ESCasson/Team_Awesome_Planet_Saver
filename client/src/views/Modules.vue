@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import LearningContent from '@/modules/components/learningContent.vue'
-import NavBar from '@/modules/components/navBar.vue'
-import ProgressBar from '@/modules/components/progressBar.vue'
+import LearningContent from '@/components/learningContent.vue'
+import NavBar from '@/components/navBar.vue'
+import ProgressBar from '@/components/progressBar.vue'
 export default {
   name: 'app',
   components: {

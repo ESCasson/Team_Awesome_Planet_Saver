@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ModuleList from '@/content/components/ModuleList.vue'
+import ModuleList from '@/components/ModuleList.vue'
 export default {
 	name: 'app',
 	components: {
