@@ -1,17 +1,17 @@
-<template lang="html">
+<template>
 	<div id="app">
-		<h3>Welcome</h3>
-		<button><a href="http://localhost:8080/login">Login</a></button>
-		<button><a href="http://localhost:8080/register">Register</a></button>
+		<div id="nav">
+			<router-link to="/">Home</router-link> |
+			<router-link to="/modules">Modules</router-link> |
+			<router-link to="/quizzes">Quizzes</router-link>
+		</div>
+		<router-view/>
 	</div>
 </template>
-
 <script>
-export default {
-	name: 'app'
-}
+
+// IMPORT CSS HERE
+
 </script>
-
 <style lang="css">
-
 </style>
