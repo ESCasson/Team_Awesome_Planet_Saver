@@ -10,8 +10,10 @@
 			<p>{{ this.description }}</p>
 		</div>
 		<br />
-		<button v-on:click="login()">Login</button>
-		<button v-on:click="register()">Register</button>
+		<div class="btns">
+			<button v-on:click="login()">Login</button>
+			<button v-on:click="register()">Register</button>
+		</div>
 	</div>
 	</div>
 </div>
@@ -91,5 +93,15 @@ export default {
 .pod {
 	display: flex;
 	justify-content: center;
+}
+
+.btns {
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	padding: 10px;
+	margin: 10px;
 }
 </style>

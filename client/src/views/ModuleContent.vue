@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="wrapper" id="app">
-    <header-component />
     <div class="center">
       <div id="header-wrapper">
       <h2>{{ moduleName }}</h2>
