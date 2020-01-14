@@ -17,31 +17,31 @@ db.quizQuestions.insertMany([
     quiz_id: 2,
     questions:[
       { number: 1,
-      question: "What is 1?",
+      question: "Of all the green house gasses which on is the most significant?",
       options: {
-        1: "1",
-        2: "2",
-        3: "3"
-      },
-      correct_answer: "1"
-    },
-    {number: 2,
-      question: "What is 2?",
-      options: {
-        1: "1",
-        2: "2",
-        3: "3"
+        1: "Aerosols",
+        2: "Carbon Dioxide",
+        3: "Methane"
       },
       correct_answer: "2"
     },
-      {number: 3,
-      question: "What is 3?",
+    {number: 2,
+      question: "In the countries that produce the most carbon dioxide what is the biggest culprit?",
       options: {
-        1: "1",
-        2: "2",
-        3: "3"
+        1: "Creating Electrity",
+        2: "Transportation",
+        3: "Food Production"
       },
-      correct_answer: "3"
+      correct_answer: "1"
+    },
+      {number: 3,
+      question: "Through photosynthesis, plants create what?, from cardon dioxide?",
+      options: {
+        1: "Water",
+        2: "Glucose",
+        3: "Chlorophyll"
+      },
+      correct_answer: "2"
     }
 ],
     pass_mark: 2
