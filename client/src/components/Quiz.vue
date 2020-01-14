@@ -34,7 +34,7 @@ export default {
       results: null,
       result_object: '',
       show: true,
-      'module_id': 'BPGG123'
+      'module_id': null
 
     }
   },
@@ -71,12 +71,20 @@ export default {
       .then(result => this.result_object = result)
       .then(() => eventBus.$emit('calcResults'),
        this.show = false)
-    }
+    },
+
+		getModule () {
+			const getURL = document.URL.split('/');
+			const module = getURL[4]
+			return this.module_id = module;
+		}
 
   },
 
   mounted() {
     this.fetchData(),
+
+		this.getModule(),
 
     eventBus.$on('result', (id, result) => {
       for (let slot of this.results.results) {
