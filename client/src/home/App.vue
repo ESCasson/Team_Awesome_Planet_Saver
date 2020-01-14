@@ -1,13 +1,12 @@
 <template>
   <div class="wrapper" id="app">
-    <header>
-        <h1><img id="logo"src="../../public/earth.png" alt="earth logo" />Planet Saver</h1>
-    </header>
+    <header-component>
+    </header-component>
     <div class="center">
       <div id="header-wrapper">
       <h2>CO2 Learning Modules</h2>
     </div>
-      <modules :module_id = 'module_id'></modules>
+      <modules class="content" :module_id = 'module_id'></modules>
     </div>
   </div>
 
@@ -16,6 +15,8 @@
 
 <script>
 import modules from '@/home/components/modules_view.vue'
+import headerComponent from '@/home/components/header.vue'
+
 
 export default {
   name: 'app',
@@ -25,7 +26,8 @@ export default {
     }
   },
   components: {
-    modules: modules
+    modules: modules,
+    'header-component': headerComponent
   },
   methods: {
     getCurrentModule () {
@@ -49,31 +51,31 @@ export default {
   background-color: #392D36;
   font-family: 'Baloo Bhai', cursive;
 }
-.header img {
-  float: left;
-  background: #555;
-}
-
-img {
-padding: 10px;
-}
-
-
-.logo{
-  border: 10px;
-}
 
 .center {
   font-family: 'Varela Round', cursive;
   color: #392D36;
   background-color: #e4dae2;
-  margin: 50px;
+  padding: 0 25px;
 }
 
 #header-wrapper {
   display: flex;
   justify-content: center;
-  margin: 50px;
+  margin: 0 50px;
+  padding: 25px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  background-color: #5D988C;
+  border: 50px;
+  padding: 30px;
+}
+
+img {
+  margin-right: 10px;
 }
 
 button {

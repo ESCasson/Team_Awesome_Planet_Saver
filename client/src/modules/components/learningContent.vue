@@ -39,24 +39,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-h1 {
-margin-left: 50px;
-}
-.content {
-background-color: #f0f0f0;
-border: 2px solid black;
-margin-left: 50px;
-margin-right: 50px;
-}
 
-.content h3 {
-padding: 5px;
-display: flex;
-justify-content: center;
-}
-
-.content p {
-padding-left: 50px;
-padding-right: 50px;
-}
 </style>

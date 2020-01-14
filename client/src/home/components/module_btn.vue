@@ -1,7 +1,7 @@
 <template lang="html">
   <div class='module'>
-    <img src="../../../public/book.png" alt="light bulb logo" height="50">
-		<p>{{ module.moduleName.split('_').join(' ') }}: <button v-on:click="getLink(module)"><a :href="this.link">Select Me</a></button></p>
+
+		<p><img src="../../../public/book.png" alt="light bulb logo" height="50">{{ module.moduleName.split('_').join(' ') }}: <button v-on:click="getLink(module)"><a :href="this.link">Select Me</a></button></p>
   </div>
 </template>
 
@@ -24,12 +24,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.module {
-  display: flex;
-  justify-content: center;
-  background-color: #5D988C;
-  border: 50px;
-  padding: 30px;
-}
+
 
 </style>

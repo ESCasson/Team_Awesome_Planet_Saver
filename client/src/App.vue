@@ -14,12 +14,4 @@ export default {
 
 <style lang="css">
 
-#app {
-	background-color: green
-}
-div {
-	height: 150px;
-	background-color: green
-}
-
 </style>

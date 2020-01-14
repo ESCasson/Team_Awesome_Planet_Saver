@@ -1,20 +1,14 @@
 <template lang="html">
-  <div id="app">
-<div class="header">
-<h1>Planet Saver</h1>
+  <div class="wrapper" id="app">
+<header-component />
+<div class="center">
+  <learning-content class="content" />
+  <br />
+  <progress-bar />
+  <br />
+  <nav-buttons />
 </div>
-<div class="navbar">
-<ul>
-<li>Home</li>
-<li>My Scores</li>
-<li>Help</li>
-</ul>
-</div>
-  <learning-content />
-	<br />
-	<progress-bar />
-	<br />
-	<nav-buttons />
+
   </div>
 </template>
 
@@ -22,33 +16,54 @@
 import LearningContent from '@/modules/components/learningContent.vue'
 import NavBar from '@/modules/components/navBar.vue'
 import ProgressBar from '@/modules/components/progressBar.vue'
+import HeaderComponent from '@/modules/components/header.vue'
 export default {
   name: 'app',
   components: {
     'learning-content': LearningContent,
     'nav-buttons': NavBar,
-    'progress-bar': ProgressBar
+    'progress-bar': ProgressBar,
+    'header-component' : HeaderComponent
   }
 }
 </script>
 
-<style lang="css" scoped>
-#app {
-font-family: Arial, sans-serif;
-}
-.header {
-display: flex;
-justify-content: center;
-background-color: skyblue;
+<style lang="css">
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Varela+Round&display=swap');
+
+.wrapper{
+  color: #E4DAE2;
+  background-color: #392D36;
+  font-family: 'Baloo Bhai', cursive;
 }
 
-.navbar ul{
-display: flex;
-list-style: none;
-background-color: #c0c0c0;
-margin-top: 0;
-padding-top: 0;
-justify-content: space-around;
-height: 30px;
+.center {
+  font-family: 'Varela Round', cursive;
+  color: #392D36;
+  background-color: #e4dae2;
+  padding: 0 25px;
+}
+
+#header-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 50px;
+  padding: 25px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  background-color: #5D988C;
+  border: 50px;
+  padding: 30px;
+}
+
+img {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #A48D3D;
 }
 </style>

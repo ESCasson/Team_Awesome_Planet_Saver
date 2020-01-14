@@ -1,10 +1,15 @@
 <template lang="html">
   <div>
-    <div v-if="this.show">
-      <p>Quiz for module: {{module_id}}</p>
+    <div  v-if="this.show">
+      <div id="header-wrapper">
+        <h2>Quiz for module: {{module_id}}</h2>
+      </div>
+      <div class="content">
+
       <quiz-question v-for="(fullQuestion, index) in this.quiz_required.questions"
       :fullQuestion="fullQuestion" :key="index"/>
     <button type="button" name="button" v-on:click="handleOnClick">Submit Answers</button>
+  </div>
     </div>
 
   <quiz-results v-else="this.show" :result_object ="result_object" ></quiz-results>
@@ -100,4 +105,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+button {
+  margin:10px
+}
 </style>

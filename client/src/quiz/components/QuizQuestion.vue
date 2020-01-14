@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div class="quiz-wrapper">
   <p>{{fullQuestion.question}}</p>
   <div v-for="(option, index) in fullQuestion.options">
   <input type="radio" :name="fullQuestion.number" :value="option" v-on:click="handleOnClick">
@@ -33,4 +33,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.quiz-wrapper {
+  margin: 10px
+}
 </style>
