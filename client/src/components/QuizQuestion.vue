@@ -21,6 +21,7 @@ export default {
   methods: {
     handleOnClick(event) {
       let value
+      console.log(event.target.value)
       if (event.target.value === this.fullQuestion.correct_answer)
         { value = true}
       else {

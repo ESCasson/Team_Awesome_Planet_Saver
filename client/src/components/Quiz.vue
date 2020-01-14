@@ -17,6 +17,7 @@
 </template>
 
 <script>
+const moment = require('moment');
 import { eventBus } from '../main.js';
 
 import QuizsService from '@/services/QuizQuizsService.js';
@@ -66,6 +67,7 @@ export default {
         objTemplate.module_id = this.quiz_required.module_id;
         objTemplate.pass_mark = this.quiz_required.pass_mark;
         objTemplate.results = [];
+        objTemplate.timestamp='';
       for (let quizQuestion of quiz.questions){
         let ansTemplate = new Object();
         ansTemplate.number = quizQuestion.number;
@@ -76,6 +78,7 @@ export default {
     },
 
     handleOnClick(){
+      this.results.timestamp = moment().format('MMMM Do YYYY, h:mm:ss a')
       StudentsService.postStudentsResults(this.results)
       .then(result => this.result_object = result)
       .then(() => eventBus.$emit('calcResults'),
