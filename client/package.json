@@ -9,6 +9,7 @@
   "dependencies": {
     "core-js": "^3.4.4",
     "cors": "^2.8.5",
+    "moment": "^2.24.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {

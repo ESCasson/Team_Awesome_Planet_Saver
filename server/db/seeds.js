@@ -23,7 +23,7 @@ db.quizQuestions.insertMany([
         2: "Carbon Dioxide",
         3: "Methane"
       },
-      correct_answer: "2"
+      correct_answer: "Carbon Dioxide"
     },
     {number: 2,
       question: "In the countries that produce the most carbon dioxide what is the biggest culprit?",
@@ -32,7 +32,7 @@ db.quizQuestions.insertMany([
         2: "Transportation",
         3: "Food Production"
       },
-      correct_answer: "1"
+      correct_answer: "Creating Electrity"
     },
       {number: 3,
       question: "Through photosynthesis, plants create what?, from cardon dioxide?",
@@ -41,7 +41,7 @@ db.quizQuestions.insertMany([
         2: "Glucose",
         3: "Chlorophyll"
       },
-      correct_answer: "2"
+      correct_answer: "Glucose"
     }
 ],
     pass_mark: 2
