@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import ModuleService from '@/services/ModulesModuleService.js'
-import CourseBtn from './courseBtn.vue'
+import ModuleService from '@/services/ModulesLearningService.js'
+import CourseBtn from './ModulecourseBtn.vue'
 
 export default {
 	name: 'module-list',
@@ -20,16 +20,21 @@ export default {
 			courseList: []
 		}
 	},
+	computed: {
+		moduleName () {
+				return this.$route.params.id
+			}
+		},
 	methods: {
-		getCourseList () {
-			ModuleService.getAllData()
+		getModuleData () {
+			ModuleService.getModule(this.moduleName)
 			.then(result => {
 				this.courseList = result
 			})
 		}
 	},
 	mounted () {
-		this.getCourseList()
+		this.getModuleData()
 	}
 }
 </script>

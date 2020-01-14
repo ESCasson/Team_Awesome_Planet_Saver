@@ -1,8 +1,7 @@
 <template lang="html">
   <div>
-<h1>{{ this.moduleName }}</h1>
+<h1>{{ this.title }}</h1>
 <div class="content">
-<h3>{{ this.title }}</h3>
 <p>{{ this.content }}</p>
 </div>
   </div>
@@ -14,24 +13,27 @@ export default {
   name: 'learning-content',
   data () {
     return {
-      moduleName: '',
       title: '',
       content: ''
     }
   },
+	computed: {
+		moduleName () {
+			return this.$route.params.id
+		},
+		modulePage () {
+			return this.$route.params.page
+		}
+	},
   mounted () {
     this.getAllData()
   },
   methods: {
     getAllData () {
-      const currentURL = document.URL
-      const arrayURL = currentURL.split('/')
-      LearningService.getAllData(arrayURL[5], arrayURL[6])
+      LearningService.getAllData(this.moduleName, this.modulePage)
         .then(result => {
           this.content = result.data
           this.title = result.contentName
-          const newName = result.moduleName.split('_')
-          this.moduleName = newName.join(' ')
         })
     }
   }

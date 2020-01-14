@@ -1,45 +1,31 @@
-<template>
+<template lang="html">
   <div class="wrapper" id="app">
-    <header-component>
-    </header-component>
+    <header-component />
     <div class="center">
       <div id="header-wrapper">
-      <h2>CO2 Learning Modules</h2>
+      <h2>{{ moduleName }}</h2>
     </div>
-      <modules class="content" :module_id = 'module_id'></modules>
+    <module-list class="content"/>
     </div>
+
+    </div>
+
   </div>
-
-
 </template>
 
 <script>
-import modules from '@/home/components/modules_view.vue'
-import headerComponent from '@/home/components/header.vue'
-
+import ModuleList from '@/components/ModuleContentList.vue'
 
 export default {
-  name: 'app',
-  data () {
-    return {
-      module_id: ''
-    }
-  },
-  components: {
-    modules: modules,
-    'header-component': headerComponent
-  },
-  methods: {
-    getCurrentModule () {
-      const getURL = document.URL
-      const arrayURL = getURL.split('/')
-      const currentModule = arrayURL[3]
-      this.module_id = currentModule
-    }
-  },
-  mounted () {
-    this.getCurrentModule()
-  }
+	name: 'app',
+	components: {
+		'module-list': ModuleList
+	},
+	computed: {
+		moduleName () {
+			return this.$route.params.id
+		}
+	}
 }
 </script>
 
@@ -68,7 +54,8 @@ export default {
 
 .content {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #5D988C;
   border: 50px;
   padding: 30px;
@@ -81,5 +68,6 @@ img {
 button {
   background-color: #A48D3D;
 }
+
 
 </style>

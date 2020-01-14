@@ -26,23 +26,21 @@ export default {
       donePages: []
     }
   },
+	computed: {
+		currentPage () {
+			return this.$route.params.page
+		},
+		moduleID () {
+			return this.$route.params.id
+		}
+	},
   mounted () {
-    this.getPage()
     this.completedPages()
   },
   methods: {
-    getPage () {
-      const getCurrentPage = document.URL
-      const arrayURL = getCurrentPage.split('/')
-      const page = arrayURL[6]
-      this.currentPage = parseInt(page)
-    },
+
     completedPages () {
-      const getURL = document.URL
-      const arrayURL = getURL.split('/')
-      const studID = arrayURL[4]
-      const modID = arrayURL[5]
-      EnrolledService.getCompletedPages(studID, modID)
+      EnrolledService.getCompletedPages('CPJA181293', this.moduleID)
         .then(results => {
           this.donePages = results[0].currentPage
         })

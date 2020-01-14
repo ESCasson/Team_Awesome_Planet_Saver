@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="wrapper" id="app">
-    <header-component />
     <div class="center">
       <div id="header-wrapper">
       <h2>Module Contents</h2>
@@ -15,12 +14,10 @@
 
 <script>
 import ModuleList from '@/components/ModuleList.vue'
-import HeaderComponent from '@/components/header.vue'
 export default {
 	name: 'app',
 	components: {
-		'module-list': ModuleList,
-    'header-component' : HeaderComponent
+		'module-list': ModuleList
 	}
 }
 </script>

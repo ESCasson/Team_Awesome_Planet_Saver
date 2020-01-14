@@ -45,6 +45,7 @@ width: 50px;
 }
 
 #logo {
+	padding: 10px;
   height: 150px;
   width: 200px;
 }

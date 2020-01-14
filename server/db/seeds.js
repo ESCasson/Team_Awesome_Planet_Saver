@@ -4,11 +4,11 @@ db.dropDatabase();
 db.modules.insertMany([
 	{
 		moduleID: 'RGG123',
-		moduleName:'Reduce_Greenhouse_Gasses'
+		moduleName:'Reduce Greenhouse Gasses'
 	},
 	{
 		moduleID: 'BPGG123',
-		moduleName:'Biggest_Producer_of_Greenhouse_Gasses'
+		moduleName:'Biggest Producer of Greenhouse Gasses'
 	}
 ]);
 
@@ -130,5 +130,18 @@ db.enrolledModules.insertMany([
 		moduleID: 'RGG123',
 		quizResult:'',
 		currentPage: [1, 3]
+	}
+]);
+
+db.loginsystem.insertMany([
+	{
+		username: 'charlie',
+		password: '12345',
+		type: 'student'
+	},
+	{
+		username: 'ghosty',
+		password: '12345',
+		type: 'teacher'
 	}
 ]);

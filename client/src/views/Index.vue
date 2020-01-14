@@ -1,25 +1,20 @@
-<template>
-  <div class="wrapper"id="app">
-    <div class="center">
-      <quiz></quiz>
-    </div>
-  </div>
-
+<template lang="html">
+<div class="wrapper" id="index">
+	<div class="center">
+		<div id="header-wrapper">
+			<h3>Welcome!</h3>
+		</div>
+	</div>
+</div>
 </template>
 
 <script>
-import Quiz from "@/components/Quiz.vue";
-
 export default {
-  name: 'app',
-
-  components: {
-    "quiz": Quiz
-  }
+	name: 'index'
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Varela+Round&display=swap');
 
 .wrapper{
@@ -41,22 +36,4 @@ export default {
   margin: 0 50px;
   padding: 25px;
 }
-
-.content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: #5D988C;
-  border: 50px;
-  padding: 30px;
-}
-
-img {
-  margin-right: 10px;
-}
-
-button {
-  background-color: #A48D3D;
-}
-
 </style>

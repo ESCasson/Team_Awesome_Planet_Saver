@@ -2,7 +2,7 @@
   <div>
     <div  v-if="this.show">
       <div id="header-wrapper">
-        <h2>Quiz for module: {{module_id}}</h2>
+        <h2>Quiz for module: {{this.moduleID}}</h2>
       </div>
       <div class="content">
 
@@ -32,14 +32,18 @@ export default {
     'quiz-question': QuizQuestion,
     'quiz-results': QuizResults
   },
+	computed: {
+		moduleID () {
+			return this.$route.params.id
+		}
+	},
   data () {
     return {
       quizs: [],
       quiz_required: {},
       results: null,
       result_object: '',
-      show: true,
-      'module_id': null
+      show: true
 
     }
   },
@@ -53,7 +57,7 @@ export default {
     },
 
     requiredQuiz(){
-      let index = this.quizs.findIndex(quiz => quiz.module_id === this.module_id)
+      let index = this.quizs.findIndex(quiz => quiz.module_id === this.moduleID)
       return this.quiz_required = this.quizs[index]
     },
 
@@ -77,19 +81,10 @@ export default {
       .then(() => eventBus.$emit('calcResults'),
        this.show = false)
     },
-
-		getModule () {
-			const getURL = document.URL.split('/');
-			const module = getURL[4]
-			return this.module_id = 'RGG123';
-		}
-
   },
 
   mounted() {
     this.fetchData(),
-
-		this.getModule(),
 
     eventBus.$on('result', (id, result) => {
       for (let slot of this.results.results) {

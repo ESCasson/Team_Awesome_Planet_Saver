@@ -6,7 +6,7 @@
     <div class="content">
       <h3>Result: {{this.percentage}}%</h3>
       <p>{{this.passMessage}}</p>
-      <button onclick="window.location.href = 'http://localhost:8080/home ';">Return To Module List</a></button> 
+      <button v-on:click="returnHome()">Return To Module List</button>
       <div v-if="passed">
     </div>
     <button v-else="passed" v-on:click="this.retakeQuiz">Retake Quiz</button>
@@ -78,7 +78,11 @@ export default {
     },
     retakeQuiz(){
       eventBus.$emit('retakeQuiz')
-    }
+    },
+
+		returnHome() {
+			this.$router.push({path: '/learning_library'})
+		}
   }
 }
 </script>

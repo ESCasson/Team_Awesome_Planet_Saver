@@ -1,55 +1,51 @@
 <template lang="html">
 <div>
 <div id="btns">
-<button v-on:click="getPreviousPage()"><a :href="this.previousPage">Back</a></button>
-<button v-on:click="getNextPage()"><a :href="this.nextPage">Next</a></button>
+<button v-on:click="getPreviousPage()">Back</button>
+<button v-on:click="getNextPage()">Next</button>
 </div>
 </div>
 </template>
 
 <script>
-import LearningService from '@/modules/services/LearningService.js'
+import LearningService from '@/services/ModulesLearningService.js'
+import { eventBus } from '../main.js';
 
 export default {
   name: 'nav-buttons',
   data () {
     return {
-      nextPage: null,
-      previousPage: null,
 			totalPage: []
     }
   },
+	computed: {
+		moduleID () {
+			return this.$route.params.id
+		},
+		currentPage () {
+			return this.$route.params.page
+		}
+	},
   methods: {
     getPreviousPage () {
-      const getURL = document.URL
-      const arrayURL = getURL.split('/')
-      const previousPage = parseInt(arrayURL[6]) - 1
-      if (previousPage === 0) {
-        this.previousPage = `http://localhost:8080/content/${arrayURL[5]}`
-      } else {
-        this.previousPage = `http://localhost:8080/module/${arrayURL[4]}/${arrayURL[5]}/${previousPage}`
-      }
+      const prevPage = parseInt(this.currentPage) - 1
+			if(prevPage <= 0) return
+			this.$router.push({path: `/modules/${this.moduleID}/${prevPage}`})
+			eventBus.$emit('change');
     },
 
     getNextPage () {
-      const getURL = document.URL
-      const arrayURL = getURL.split('/')
-      const nextPage = parseInt(arrayURL[6]) + 1
-			const length = this.totalPage.length;
-
-			if (nextPage > length) {
-        this.nextPage = `http://localhost:8080/quiz/${arrayURL[5]}`
-      } else {
-        this.nextPage = `http://localhost:8080/module/${arrayURL[4]}/${arrayURL[5]}/${nextPage}`
-      }
+      const nextPage = parseInt(this.currentPage) + 1
+			if(nextPage > this.totalPage.length) {
+				this.$router.push({path: `/quizzes/${this.moduleID}`})
+			} else {
+				this.$router.push({path: `/modules/${this.moduleID}/${nextPage}`})
+			}
+			eventBus.$emit('change');
     },
 
 	totalPages () {
-		const getURL = document.URL
-		const arrayURL = getURL.split('/')
-		const currentModule = arrayURL[5]
-
-		LearningService.getTotalPages(currentModule)
+		LearningService.getTotalPages(this.moduleID)
 		.then(result => {
 			this.totalPage = result
 		})
