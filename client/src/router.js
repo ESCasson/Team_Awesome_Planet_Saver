@@ -6,6 +6,7 @@ import Login from './views/Login.vue'
 import Content from './views/Content.vue'
 import Index from './views/Index.vue'
 import Modules from './views/Modules.vue'
+import QuizList from './views/QuizList.vue'
 
 Vue.use(Router)
 
@@ -38,8 +39,8 @@ export default new Router({
 		},
 		{
 			path: '/quizzes',
-			name: 'quizzes',
-			component: Quizzes
+			name: 'quizlist',
+			component: QuizList
 		},
 		{
 			path: '/quizzes/:id',
