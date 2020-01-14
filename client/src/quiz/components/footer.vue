@@ -1,14 +1,21 @@
 <template lang="html">
   <div class="footerDiv">
-    <nav>
-      <ul>
-        <li>Learning Libary</li>
-        <li>My Results</li>
-        <li>Logo Out</li>
-      </ul>
-    </nav>
-      <h1><img id="logo"src="../../../public/earth.png" alt="earth logo" />Planet Saver</h1>
-  </div>
+<div class="footerItem">
+  <h3><img id="earth"src="../../../public/earth.png" alt="earth logo">Planet Saver</h3>
+  <p>Planet House</br> 101 High Street</br>New Town</br></br>Tel: 0141 100 8888</br>Email: general@planetsaver.co.uk
+  </p>
+</div>
+
+        <div class="footerItem">
+          <nav>
+            <ul>
+              <li>Contact Us</li>
+            </ul>
+          </nav>
+          <img id="logo"src="../../../public/socialLogos.png" alt="social media logo">
+
+</div>
+</div>
 </template>
 
 <script>
@@ -20,15 +27,36 @@ export default {
 <style lang="css" scoped>
 
 .footerDiv {
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
 padding: 10px;
+height: 50px;
+width: 50px;
 }
 
-h1 {
+#logo {
+  height: 150px;
+  width: 200px;
+}
+
+h1, h3 {
   color: #A48D3D;
+}
+
+p {
+  margin: 10px;
+  font-family: 'Varela Round', cursive;
+  font-size: 12px;
 }
 
 
@@ -42,7 +70,7 @@ ul {
 }
 
 li {
-  float: right;
+  float: left;
   padding: 25px;
 }
 

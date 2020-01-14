@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="quiz-wrapper">
-  <p>{{fullQuestion.question}}</p>
+
+  <p><img src="../../../public/lightbulb.png" alt="light bulb logo" height="50">{{fullQuestion.question}}</p>
   <div v-for="(option, index) in fullQuestion.options">
   <input type="radio" :name="fullQuestion.number" :value="option" v-on:click="handleOnClick">
   {{option}}</br>
@@ -34,6 +35,11 @@ export default {
 
 <style lang="css" scoped>
 .quiz-wrapper {
-  margin: 10px
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
 }
 </style>
