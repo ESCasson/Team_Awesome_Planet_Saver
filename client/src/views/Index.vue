@@ -4,18 +4,43 @@
 		<div id="header-wrapper">
 			<h3>Welcome!</h3>
 		</div>
+		<div class="content">
+		<div class="pod">
+			<img class="welcome-img" :src="this.image" alt="Nasa Picture of The Day" />
+			<p>{{ this.description }}</p>
+		</div>
+		<br />
 		<button v-on:click="login()">Login</button>
+	</div>
 	</div>
 </div>
 </template>
 
 <script>
+import Nasa from '@/services/NasaServices.js'
 export default {
 	name: 'index',
+	data () {
+		return {
+			image: null,
+			description: null
+		}
+	},
 	methods: {
 		login () {
 			this.$router.push({ path: '/login'})
+		},
+
+		getNasa () {
+			Nasa.getAOP()
+			.then(result => {
+				this.image = result.url,
+				this.description = result.explanation
+			})
 		}
+	},
+	mounted () {
+		this.getNasa()
 	}
 }
 </script>
@@ -41,5 +66,25 @@ export default {
   justify-content: center;
   margin: 0 50px;
   padding: 25px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+	background-color: #e4dae2;
+  border: 50px;
+  padding: 30px;
+}
+
+.welcome-img {
+	width: 500px;
+	height: 500px;
+	border: 1px black solid;
+}
+
+.pod {
+	display: flex;
+	justify-content: center;
 }
 </style>
