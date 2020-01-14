@@ -1,11 +1,13 @@
 <template lang="html">
-<div class="wrapper" id="index">
 	<div class="center">
-		<div id="header-wrapper">
-			<h3>Welcome!</h3>
+		<div class="header-wrapper">
+			<h2>Welcome!</h2>
 		</div>
+		<div class="image-wrapper">
+			<img src="../../public/welcome.png" alt="Girl at a blackboard">
+		</div>
+
 	</div>
-</div>
 </template>
 
 <script>
@@ -15,25 +17,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Varela+Round&display=swap');
 
-.wrapper{
-  color: #E4DAE2;
-  background-color: #392D36;
-  font-family: 'Baloo Bhai', cursive;
+img {
+	width: 500px;
 }
 
-.center {
-  font-family: 'Varela Round', cursive;
-  color: #392D36;
-  background-color: #e4dae2;
-  padding: 0 25px;
-}
 
-#header-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 0 50px;
-  padding: 25px;
-}
 </style>
