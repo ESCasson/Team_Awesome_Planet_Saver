@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="footerDiv">
 <div class="footerItem">
-  <h3><img id="earth"src="../../../public/earth.png" alt="earth logo">Planet Saver</h3>
+  <h3><img id="earth"src="../../public/earth.png" alt="earth logo">Planet Saver</h3>
   <p>Planet House</br> 101 High Street</br>New Town</br></br>Tel: 0141 100 8888</br>Email: general@planetsaver.co.uk
   </p>
 </div>
@@ -12,7 +12,7 @@
               <li>Contact Us</li>
             </ul>
           </nav>
-          <img id="logo"src="../../../public/socialLogos.png" alt="social media logo">
+          <img id="logo"src="../../public/socialLogos.png" alt="social media logo">
 
 </div>
 </div>

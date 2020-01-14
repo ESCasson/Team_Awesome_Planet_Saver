@@ -1,6 +1,6 @@
 <template lang="html">
 <div>
-<p><img src="../../../public/pages.png" alt="light bulb logo" height="50">{{ course.contentName }}: <button v-on:click="getLink(course)"><a :href="this.link">Select Me</a></button></p>
+<p><img src="../../public/pages.png" alt="light bulb logo" height="50">{{ course.contentName }}: <button v-on:click="getLink(course)"><a :href="this.link">Select Me</a></button></p>
 </div>
 </template>
 

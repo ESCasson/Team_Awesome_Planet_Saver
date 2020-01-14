@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="headerDiv">
-      <h1><img id="logo"src="../../../public/earth.png" alt="earth logo" />Planet Saver</h1>
+      <h1><img id="logo"src="../../public/earth.png" alt="earth logo" />Planet Saver</h1>
       <nav>
         <ul>
           <li>Learning Libary</li>
