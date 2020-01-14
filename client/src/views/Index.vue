@@ -4,13 +4,19 @@
 		<div id="header-wrapper">
 			<h3>Welcome!</h3>
 		</div>
+		<button v-on:click="login()">Login</button>
 	</div>
 </div>
 </template>
 
 <script>
 export default {
-	name: 'index'
+	name: 'index',
+	methods: {
+		login () {
+			this.$router.push({ path: '/login'})
+		}
+	}
 }
 </script>
 
