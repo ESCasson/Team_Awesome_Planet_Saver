@@ -1,7 +1,7 @@
 <template lang="html">
 	<div class="content">
 		<div class="pod">
-			<img class="welcome-img" :src="this.image" alt="Nasa Picture of The Day" />
+			<div><img class="welcome-img" :src="this.image" alt="Nasa Picture of The Day" /></div>
 			<p class="space">{{ this.description }}</p>
 		</div>
 		<br />
