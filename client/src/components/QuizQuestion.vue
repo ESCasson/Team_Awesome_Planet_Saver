@@ -1,10 +1,13 @@
 <template lang="html">
-  <div>
+  <div id="question">
   <p><img src="../../public/lightbulb.png" alt="lightbulb">{{fullQuestion.question}}</p>
-  <div  id="options" v-for="(option, index) in fullQuestion.options">
-  <input type="radio" :name="fullQuestion.number" :value="option" v-on:click="handleOnClick">
-  {{option}}</br>
-</div>
+  <div class="options">
+    <div class="option"v-for="(option, index) in fullQuestion.options">
+    <input type="radio" :name="fullQuestion.number" :value="option" v-on:click="handleOnClick">
+    {{option}}</br>
+  </div>
+  </div>
+
 </br>
 </div>
 
@@ -40,8 +43,17 @@ img {
   height: 40px;
 }
 
+#question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #options {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
+
+
 </style>
