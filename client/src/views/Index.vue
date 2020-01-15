@@ -1,12 +1,14 @@
 <template lang="html">
-	<div class="center">
-		<div class="header-wrapper">
-			<h2>Welcome!</h2>
+	<div class="content">
+		<div class="pod">
+			<img class="welcome-img" :src="this.image" alt="Nasa Picture of The Day" />
+			<p class="space">{{ this.description }}</p>
 		</div>
-		<div class="image-wrapper">
-			<img src="../../public/welcome.png" alt="Girl at a blackboard">
+		<br />
+		<div class="btns">
+			<button v-on:click="login()">Login</button>
+			<button v-on:click="register()">Register</button>
 		</div>
-
 	</div>
 </template>
 
@@ -45,8 +47,51 @@ export default {
 
 <style lang="css" scoped>
 
-img {
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Varela+Round&display=swap');
+.wrapper{
+  color: #E4DAE2;
+  background-color: #392D36;
+  font-family: 'Baloo Bhai', cursive;
+}
+.center {
+  font-family: 'Varela Round', cursive;
+  color: #392D36;
+  background-color: #e4dae2;
+  padding: 0 25px;
+}
+#header-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 50px;
+  padding: 25px;
+}
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+	background-color: #e4dae2;
+  border: 50px;
+  padding: 30px;
+}
+.welcome-img {
 	width: 500px;
+	height: 500px;
+	border: 1px black solid;
+}
+.pod {
+	display: flex;
+	justify-content: center;
+}
+.btns {
+	display: flex;
+	justify-content: center;
+}
+.space {
+	margin: 20px;
+}
+button {
+	padding: 10px;
+	margin: 10px;
 }
 
 

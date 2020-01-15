@@ -3,7 +3,7 @@
         <h1><img id="logo"src="../../public/earth.png" alt="earth logo" />Planet Saver</h1>
         <div id="nav">
           <ul>
-            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/home">Home</router-link></li>
             <li><router-link to="/learning_library">Modules</router-link></li>
             <li><router-link to="/quizzes">Quizzes</router-link></li>
           </ul>

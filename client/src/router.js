@@ -5,9 +5,10 @@ import Quizzes from './views/Quiz.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import Content from './views/Content.vue'
-import Index from './views/Index.vue'
+import ModuleIndex from './views/ModuleIndex.vue'
 import Modules from './views/Modules.vue'
 import QuizList from './views/QuizList.vue'
+import Index from './views/Index.vue'
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
 			path: '/',
 			name: 'index',
 			component: Index
+		},
+		{
+			path: '/home',
+			name: 'moduleindex',
+			component: ModuleIndex
 		},
 		{
 			path: '/login',
