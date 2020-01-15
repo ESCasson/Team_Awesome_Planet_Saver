@@ -1,8 +1,14 @@
 <template>
 	<div class="wrapper" id="app">
-		<header-component />
-		<router-view />
-		<footer-component />
+		<div class="header">
+			<header-component />
+		</div>
+		<div class="body">
+			<router-view />
+		</div>
+		<div class="footer">
+			<footer-component />
+		</div>
 	</div>
 </template>
 <script>
@@ -28,6 +34,8 @@ export default {
   color: #392D36;
   background-color: #E4DAE2;
   font-family: 'Baloo Bhai', cursive;
+	position: relative;
+	min-height: 100vh;
 }
 
 
@@ -37,6 +45,16 @@ export default {
   background-color: #e4dae2;
 	min-height: 300px;
 	padding: 25px;
+}
+
+.body {
+	padding-bottom: 200px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 .header-wrapper {
