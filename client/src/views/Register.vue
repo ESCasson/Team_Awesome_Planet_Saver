@@ -1,5 +1,4 @@
 <template lang="html">
-	<div class="wrapper" id="app">
 		<div class="center">
 			<div id="header-wrapper">
 				<h3>Register</h3>
@@ -15,7 +14,6 @@
 					<input type="submit" id="save" value="Register">
 
 				</form>
-		</div>
 		</div>
 	</div>
 </template>
@@ -51,4 +49,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#save {
+	background-color: #A48D3D;
+}
 </style>
