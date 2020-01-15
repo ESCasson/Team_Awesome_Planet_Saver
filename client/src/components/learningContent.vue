@@ -2,7 +2,7 @@
   <div>
 <h1>{{ this.title }}</h1>
 <div class="content">
-<p>{{ this.content }}</p>
+<p v-html="this.content"></p>
 </div>
   </div>
 </template>
