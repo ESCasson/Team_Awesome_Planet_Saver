@@ -35,7 +35,7 @@ export default {
   font-family: 'Varela Round', cursive;
   color: #392D36;
   background-color: #e4dae2;
-	min-height: 300px;
+	min-height: 400px;
 	padding: 25px;
 }
 
