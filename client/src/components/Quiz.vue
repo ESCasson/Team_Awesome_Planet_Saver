@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <div  v-if="this.show">
-      <div id="header-wrapper">
+      <div class="header-wrapper">
         <h2>Quiz for module: {{this.name}}</h2>
       </div>
       <div class="content">

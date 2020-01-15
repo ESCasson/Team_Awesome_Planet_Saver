@@ -62,14 +62,14 @@ list-style: none;
 }
 
 #onebar ul li {
-border: 2px solid black;
+border: 2px solid #392D36;
 }
 
 .completed {
 display: flex;
 height: 30px;
 width: 200px;
-background-color: green;
+background-color: #5D988C ;
 }
 
 .empty {

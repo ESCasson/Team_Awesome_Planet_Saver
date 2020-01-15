@@ -1,14 +1,14 @@
 <template lang="html">
   <div class="headerDiv">
-      <h1><img id="logo"src="../../public/earth.png" alt="earth logo" />Planet Saver</h1>
-      <nav>
-        <ul>
-          <li>Learning Libary</li>
-          <li>My Results</li>
-          <li>Logo Out</li>
-        </ul>
-      </nav>
-  </div>
+        <h1><img id="logo"src="../../public/earth.png" alt="earth logo" />Planet Saver</h1>
+        <div id="nav">
+          <ul>
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/learning_library">Modules</router-link></li>
+            <li><router-link to="/quizzes">Quizzes</router-link></li>
+          </ul>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -20,11 +20,14 @@ export default {
 <style lang="css" scoped>
 
 .headerDiv {
-  display: inline-flex;
+  background-color: #392D36;
+  color: #E4DAE2;
+  display: flex;
 }
 
 img {
 padding: 10px;
+width: 75;
 }
 
 h1 {
@@ -35,26 +38,27 @@ h1 {
 .logo{
   border: 10px;
 }
-nav {
-  padding-left: 325px;
-}
+
 ul {
+  display: flex;
+  justify-content: center;
   list-style-type: none;
 }
 
 li {
+  padding: 20px;
   float: left;
-  padding: 25px;
 }
 
 li a {
+  color: #E4DAE2;
   display: block;
   text-align: center;
-  padding: 25px;
+
   text-decoration: none;
 }
 
 li a:hover {
-  background-color: #111111;
+  background-color: #678193;
 }
 </style>

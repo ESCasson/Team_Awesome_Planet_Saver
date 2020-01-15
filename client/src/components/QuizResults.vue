@@ -1,10 +1,10 @@
 <template lang="html">
   <div class="center">
-    <div id="header-wrapper">
+    <div class="header-wrapper">
       <h2>Quiz Results</h2>
     </div>
     <div class="content">
-      <h3>Result: {{this.percentage}}%</h3>
+      <h3>{{this.percentage}}%</h3>
       <p>{{this.passMessage}}</p>
       <button v-on:click="returnHome()">Return To Module List</button>
       <div v-if="passed">

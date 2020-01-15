@@ -1,6 +1,12 @@
 <template lang="html">
-  <div>
-		<h3>Login</h3>
+  <div class="center" >
+<div class="header-wrapper">
+  <h2>Login</h2>
+</div>
+
+    <div class="content">
+
+
 				<label for="username">Username:</label>
 				<input type="text" id="username" v-model="username">
 				<br />
@@ -8,6 +14,7 @@
 				<input type="password" id="password" v-model="password">
 				<br />
 				<button v-on:click="checkData()">Login!</button>
+  </div>
   </div>
 </template>
 
@@ -47,4 +54,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 </style>
