@@ -2,7 +2,7 @@
   <div>
     <div  v-if="this.show">
       <div id="header-wrapper">
-        <h2>Quiz for module: {{this.moduleID}}</h2>
+        <h2>Quiz for module: {{this.name}}</h2>
       </div>
       <div class="content">
 
@@ -22,6 +22,7 @@ import { eventBus } from '../main.js';
 
 import QuizsService from '@/services/QuizQuizsService.js';
 import StudentsService from '@/services/QuizStudentsService.js';
+import LearningService from '@/services/ModulesLearningService.js'
 
 import QuizQuestion from './QuizQuestion.vue';
 import QuizResults from './QuizResults.vue'
@@ -44,7 +45,8 @@ export default {
       quiz_required: {},
       results: null,
       result_object: '',
-      show: true
+      show: true,
+			name: null
 
     }
   },
@@ -52,7 +54,9 @@ export default {
   methods: {
     fetchData(){
       QuizsService.getQuizs()
-      .then(quizs => this.quizs = quizs)
+      .then(quizs => {
+				this.quizs = quizs
+			})
       .then(() => this.requiredQuiz())
       .then((quiz) => this.createResultsSlots(quiz))
     },
@@ -84,10 +88,18 @@ export default {
       .then(() => eventBus.$emit('calcResults'),
        this.show = false)
     },
+
+		moduleName () {
+			LearningService.getModule(this.moduleID)
+			.then(result => {
+				this.name = result[0].moduleName
+			})
+		}
   },
 
   mounted() {
     this.fetchData(),
+		this.moduleName()
 
     eventBus.$on('result', (id, result) => {
       for (let slot of this.results.results) {

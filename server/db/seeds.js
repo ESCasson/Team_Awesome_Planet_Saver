@@ -14,6 +14,7 @@ db.modules.insertMany([
 
 db.quizQuestions.insertMany([
   { module_id: 'RGG123',
+		moduleName:'Reduce Greenhouse Gasses',
     quiz_id: 2,
     questions:[
       { number: 1,
@@ -84,24 +85,28 @@ db.quizQuestions.insertMany([
 db.learningContent.insertMany([
 	{
 		moduleID: 'RGG123',
+		moduleName:'Reduce Greenhouse Gasses',
 		pageNumber: 1,
 		data:"The greenhouse effect is a process that occurs when gases in Earth\'s atmosphere trap the Sun\'s heat. This process makes Earth much warmer than it would be without an atmosphere. The greenhouse effect is one of the things that makes Earth a comfortable place to live.",
 		contentName: 'What is the Greenhouse Effect?'
 	},
 	{
 		moduleID: 'RGG123',
+		moduleName:'Reduce Greenhouse Gasses',
 		pageNumber: 2,
-		data:"As you might expect from the name, the greenhouse effect works … like a greenhouse! A greenhouse is a building with glass walls and a glass roof. Greenhouses are used to grow plants, such as tomatoes and tropical flowers.\n A greenhouse stays warm inside, even during the winter. In the daytime, sunlight shines into the greenhouse and warms the plants and air inside. At nighttime, it\'s colder outside, but the greenhouse stays pretty warm inside. That\'s because the glass walls of the greenhouse trap the Sun's heat.",
+		data:"As you might expect from the name, the greenhouse effect works … like a greenhouse! A greenhouse is a building with glass walls and a glass roof. Greenhouses are used to grow plants, such as tomatoes and tropical flowers.<br /> A greenhouse stays warm inside, even during the winter. In the daytime, sunlight shines into the greenhouse and warms the plants and air inside. At nighttime, it\'s colder outside, but the greenhouse stays pretty warm inside. That\'s because the glass walls of the greenhouse trap the Sun's heat.",
 		contentName: 'How does the greenhouse effect work?'
 	},
 	{
 		moduleID: 'RGG123',
+		moduleName:'Reduce Greenhouse Gasses',
 		pageNumber: 3,
-		data:"Human activities are changing Earth\'s natural greenhouse effect. Burning fossil fuels like coal and oil puts more carbon dioxide into our atmosphere.\n NASA has observed increases in the amount of carbon dioxide and some other greenhouse gases in our atmosphere. Too much of these greenhouse gases can cause Earth\'s atmosphere to trap more and more heat. This causes Earth to warm up.",
+		data:"Human activities are changing Earth\'s natural greenhouse effect. Burning fossil fuels like coal and oil puts more carbon dioxide into our atmosphere.\r\n NASA has observed increases in the amount of carbon dioxide and some other greenhouse gases in our atmosphere. Too much of these greenhouse gases can cause Earth\'s atmosphere to trap more and more heat. This causes Earth to warm up.",
 		contentName: 'How are humans impacting the greenhouse effect?'
 	},
 	{
 		moduleID: 'RGG123',
+		moduleName:'Reduce Greenhouse Gasses',
 		pageNumber: 4,
 		data: "Just like a glass greenhouse, Earth\'s greenhouse is also full of plants! Plants can help to balance the greenhouse effect on Earth. All plants — from giant trees to tiny phytoplankton in the ocean — take in carbon dioxide and give off oxygen.\n The ocean also absorbs a lot of excess carbon dioxide in the air. Unfortunately, the increased carbon dioxide in the ocean changes the water, making it more acidic. This is called ocean acidification.\n More acidic water can be harmful to many ocean creatures, such as certain shellfish and coral. Warming oceans — from too many greenhouse gases in the atmosphere — can also be harmful to these organisms. Warmer waters are a main cause of coral bleaching.",
 		contentName: 'What reduces the greenhouse effect on Earth?'
@@ -119,16 +124,6 @@ db.students.insertMany([
 	}
 ]);
 
-db.userTypes.insertMany([
-	{
-		userID: 'CPJA181293',
-		userType: 'student'
-	},
-	{
-		userID: 'TEACH1234',
-		userType: 'teacher'
-	}
-]);
 
 db.enrolledModules.insertMany([
 	{

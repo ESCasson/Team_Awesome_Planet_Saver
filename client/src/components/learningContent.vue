@@ -9,6 +9,8 @@
 
 <script>
 import LearningService from '@/services/ModulesLearningService.js'
+const nl2br = require('nl2br');
+
 export default {
   name: 'learning-content',
   data () {
@@ -32,7 +34,7 @@ export default {
     getAllData () {
       LearningService.getAllData(this.moduleName, this.modulePage)
         .then(result => {
-          this.content = result.data
+          this.content = nl2br(result.data, false)
           this.title = result.contentName
         })
     }
